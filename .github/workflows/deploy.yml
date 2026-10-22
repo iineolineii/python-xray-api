@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: write
       actions: write
+      id-token: write
 
     steps:
       - name: Checkout repository
@@ -32,7 +33,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.versions.outputs.needs_update == 'true'
-        run: pip install grpcio-tools
+        run: pip install grpcio-tools build
 
       - name: Clone Xray-core source
         if: steps.versions.outputs.needs_update == 'true'
@@ -60,6 +61,10 @@ jobs:
         if: steps.versions.outputs.needs_update == 'true'
         run: sed -i "s/^version = .*/version = \"${{ steps.versions.outputs.new_version }}\"/" pyproject.toml
 
+      - name: Build Python package
+        if: steps.versions.outputs.needs_update == 'true'
+        run: python -m build
+
       - name: Commit, tag, and push
         if: steps.versions.outputs.needs_update == 'true'
         uses: stefanzweifel/git-auto-commit-action@v7
@@ -76,14 +81,36 @@ jobs:
           tag_name: v${{ steps.versions.outputs.new_version }}
           name: v${{ steps.versions.outputs.new_version }}
           prerelease: ${{ steps.check_prerelease.outputs.is_prerelease }}
+          files: |
+            dist/*.whl
+            dist/*.tar.gz
           body: |
             Updated Python bindings to match **Xray-core v${{ steps.versions.outputs.latest_xray_version }}**
 
+            ## Installation:
+
+            ### From PyPI (Recommended)
+            ```bash
+            pip install python-xray-api
+            ```
+
+            ### From GitHub Release (Wheel)
+            ```bash
+            pip install https://github.com/iineolineii/python-xray-api/releases/download/v${{ steps.versions.outputs.new_version }}/python_xray_api-${{ steps.versions.outputs.new_version }}-py3-none-any.whl
+            ```
+
+            ### From source
             ```bash
             pip install git+https://github.com/iineolineii/python-xray-api.git@v${{ steps.versions.outputs.new_version }}
             ```
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to PyPI
+        if: steps.versions.outputs.needs_update == 'true'
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
 
       - name: Final Summary
         if: steps.versions.outputs.needs_update == 'true'
