@@ -43,31 +43,39 @@ jobs:
           path: xray-src
           fetch-depth: 1
 
+      - name: Check if Xray-core version is a prerelease
+        if: steps.versions.outputs.needs_update == 'true'
+        id: check_prerelease
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          IS_PRERELEASE=$(gh api repos/XTLS/Xray-core/releases/tags/v${{ steps.versions.outputs.latest_xray_version }} --jq '.prerelease')
+          echo "is_prerelease=$IS_PRERELEASE" >> $GITHUB_OUTPUT
+
       - name: Compile protobuf files
         if: steps.versions.outputs.needs_update == 'true'
         run: python scripts/compile.py xray-src xray
 
       - name: Update version in pyproject.toml
         if: steps.versions.outputs.needs_update == 'true'
-        run: |
-          # new_version уже без 'v', что идеально для PEP 440
-          sed -i "s/^version = .*/version = \"${{ steps.versions.outputs.new_version }}\"/" pyproject.toml
+        run: sed -i "s/^version = .*/version = \"${{ steps.versions.outputs.new_version }}\"/" pyproject.toml
 
       - name: Commit, tag, and push
         if: steps.versions.outputs.needs_update == 'true'
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: Release v${{ steps.versions.outputs.new_version }}
+          commit_message: Update Python bindings to match Xray-core v${{ steps.versions.outputs.latest_xray_version }}
           file_pattern: 'xray/ pyproject.toml'
           tag_name: v${{ steps.versions.outputs.new_version }}
-          tagging_message: Release v${{ steps.versions.outputs.new_version }}
+          tagging_message: v${{ steps.versions.outputs.new_version }}
 
       - name: Create GitHub Release
         if: steps.versions.outputs.needs_update == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.versions.outputs.new_version }}
-          name: Release v${{ steps.versions.outputs.new_version }}
+          name: v${{ steps.versions.outputs.new_version }}
+          prerelease: ${{ steps.check_prerelease.outputs.is_prerelease }}
           body: |
             Updated Python bindings to match **Xray-core v${{ steps.versions.outputs.latest_xray_version }}**
 
