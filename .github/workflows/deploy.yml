@@ -1,0 +1,82 @@
+name: Update Xray API
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Fetch versions
+        id: versions
+        run: bash scripts/fetch_versions.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+
+      - name: Setup Python
+        if: steps.versions.outputs.needs_update == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        if: steps.versions.outputs.needs_update == 'true'
+        run: pip install grpcio-tools
+
+      - name: Clone Xray-core source
+        if: steps.versions.outputs.needs_update == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: XTLS/Xray-core
+          ref: v${{ steps.versions.outputs.latest_xray_version }}
+          path: xray-src
+          fetch-depth: 1
+
+      - name: Compile protobuf files
+        if: steps.versions.outputs.needs_update == 'true'
+        run: python scripts/compile.py xray-src xray
+
+      - name: Update version in pyproject.toml
+        if: steps.versions.outputs.needs_update == 'true'
+        run: |
+          # new_version уже без 'v', что идеально для PEP 440
+          sed -i "s/^version = .*/version = \"${{ steps.versions.outputs.new_version }}\"/" pyproject.toml
+
+      - name: Commit, tag, and push
+        if: steps.versions.outputs.needs_update == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: Release v${{ steps.versions.outputs.new_version }}
+          file_pattern: 'xray/ pyproject.toml'
+          tag_name: v${{ steps.versions.outputs.new_version }}
+          tagging_message: Release v${{ steps.versions.outputs.new_version }}
+
+      - name: Create GitHub Release
+        if: steps.versions.outputs.needs_update == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.versions.outputs.new_version }}
+          name: Release v${{ steps.versions.outputs.new_version }}
+          body: |
+            Updated Python bindings to match **Xray-core v${{ steps.versions.outputs.latest_xray_version }}**
+
+            ```bash
+            pip install git+https://github.com/iineolineii/python-xray-api.git@v${{ steps.versions.outputs.new_version }}
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Final Summary
+        if: steps.versions.outputs.needs_update == 'true'
+        run: echo "## ✅ Update completed successfully" >> $GITHUB_STEP_SUMMARY
