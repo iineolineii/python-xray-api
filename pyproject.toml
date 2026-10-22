@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-xray-api"
+version = "0.0.2+26.10.21"
+description = "Auto-generated Python gRPC and Protobuf bindings for Xray-core"
+readme = "README.md"
+license-files = [
+    "LICENSE"
+]
+authors = [
+    {name = "iineolineii"}
+]
+requires-python = ">=3.9"
+keywords = ["xray", "grpc", "protobuf", "vless", "proxy", "networking"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: Proxy Servers",
+]
+dependencies = [
+    "grpcio-tools"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/iineolineii/python-xray-api"
+"Source" = "https://github.com/iineolineii/python-xray-api"
+"Upstream (Xray-core)" = "https://github.com/XTLS/Xray-core"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["xray", "xray.*"]
+exclude = ["xray-src*", "venv*", "tests*", "build*", "dist*"]
