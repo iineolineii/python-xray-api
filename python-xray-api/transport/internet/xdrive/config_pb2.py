@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from xray.transport.internet.splithttp import config_pb2 as transport_dot_internet_dot_splithttp_dot_config__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&transport/internet/xdrive/config.proto\x12\x1exray.transport.internet.xdrive\"\xa1\x02\n\x06\x43onfig\x12\x15\n\rremote_folder\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\x12\x0f\n\x07secrets\x18\x03 \x03(\t\x12\x15\n\rsegment_bytes\x18\x04 \x01(\r\x12\x19\n\x11\x66lush_interval_ms\x18\x05 \x01(\r\x12\x18\n\x10poll_interval_ms\x18\x06 \x01(\r\x12\x1c\n\x14max_poll_interval_ms\x18\x07 \x01(\r\x12\x1b\n\x13session_ttl_seconds\x18\x08 \x01(\r\x12\x13\n\x0b\x63oncurrency\x18\t \x01(\r\x12\x17\n\x0f\x65\x61ger_window_ms\x18\n \x01(\r\x12\x17\n\x0fhole_timeout_ms\x18\x0b \x01(\r\x12\x10\n\x08template\x18\x0c \x01(\tB5Z3github.com/xtls/xray-core/transport/internet/xdriveb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&transport/internet/xdrive/config.proto\x12\x1exray.transport.internet.xdrive\x1a)transport/internet/splithttp/config.proto\"\xde\x02\n\x06\x43onfig\x12\x15\n\rremote_folder\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\x12\x0f\n\x07secrets\x18\x03 \x03(\t\x12\x15\n\rsegment_bytes\x18\x04 \x01(\r\x12\x19\n\x11\x66lush_interval_ms\x18\x05 \x01(\r\x12\x18\n\x10poll_interval_ms\x18\x06 \x01(\r\x12\x1c\n\x14max_poll_interval_ms\x18\x07 \x01(\r\x12\x1b\n\x13session_ttl_seconds\x18\x08 \x01(\r\x12\x13\n\x0b\x63oncurrency\x18\t \x01(\r\x12\x17\n\x0f\x65\x61ger_window_ms\x18\n \x01(\r\x12\x17\n\x0fhole_timeout_ms\x18\x0b \x01(\r\x12\x10\n\x08template\x18\x0c \x01(\t\x12;\n\x04xmux\x18\r \x01(\x0b\x32-.xray.transport.internet.splithttp.XmuxConfigB5Z3github.com/xtls/xray-core/transport/internet/xdriveb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.xdrive.c
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/xtls/xray-core/transport/internet/xdrive'
-  _globals['_CONFIG']._serialized_start=75
-  _globals['_CONFIG']._serialized_end=364
+  _globals['_CONFIG']._serialized_start=118
+  _globals['_CONFIG']._serialized_end=468
 # @@protoc_insertion_point(module_scope)

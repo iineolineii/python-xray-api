@@ -27,9 +27,8 @@ def fix_imports(destination_dir: Path) -> None:
     ]
 
     packages_regex = "|".join(packages)
-    print(packages_regex)
 
-    for module in destination_dir.resolve().rglob("*.py"):
+    for module in destination_dir.rglob("*.py"):
         with open(module, "r") as file:
             code = file.read()
             code = re.sub(rf"^import\s+((?:{packages_regex}).*)",        r"from xray import \1", code, flags=re.MULTILINE)
@@ -38,11 +37,31 @@ def fix_imports(destination_dir: Path) -> None:
         with open(module, "w") as file:
             file.write(code)
 
+    for package in destination_dir.rglob("*"):
+        init_module = package / "__init__.py"
+        if package.is_dir() and not init_module.exists():
+            init_module.touch()
+
+    init_module = destination_dir / "__init__.py"
+    if not init_module.exists():
+        init_module.touch()
+
 
 def main(source_dir: str | Path, destination_dir: str | Path) -> None:
-    source_dir      = Path(source_dir)
+    source_dir = Path(source_dir).resolve()
+
+    if not source_dir.exists():
+        raise FileNotFoundError(f"Source directory {source_dir} does not exist")
+
+    if not source_dir.is_dir():
+        raise NotADirectoryError(f"Source path {source_dir} is not a directory")
+
+    if not list(source_dir.iterdir()):
+        raise FileNotFoundError(f"Source directory {source_dir} is empty")
+
     destination_dir = Path(destination_dir)
     destination_dir.mkdir(exist_ok=True)
+    destination_dir = destination_dir.resolve()
 
     for proto in source_dir.rglob("*.proto"):
         compile(source_dir, destination_dir, proto)
