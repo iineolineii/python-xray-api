@@ -26,7 +26,7 @@ from xray.common.net import network_pb2 as common_dot_net_dot_network__pb2
 from xray.common.net import address_pb2 as common_dot_net_dot_address__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#proxy/shadowsocks_2022/config.proto\x12\x1bxray.proxy.shadowsocks_2022\x1a\x18\x63ommon/net/network.proto\x1a\x18\x63ommon/net/address.proto\"t\n\x0cServerConfig\x12\x0e\n\x06method\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\x05\x12)\n\x07network\x18\x05 \x03(\x0e\x32\x18.xray.common.net.Network\"\x91\x01\n\x15MultiUserServerConfig\x12\x0e\n\x06method\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x30\n\x05users\x18\x03 \x03(\x0b\x32!.xray.proxy.shadowsocks_2022.User\x12)\n\x07network\x18\x04 \x03(\x0e\x32\x18.xray.common.net.Network\"1\n\x04User\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\r\n\x05level\x18\x03 \x01(\x05\"}\n\x0c\x43lientConfig\x12,\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0b\x32\x1b.xray.common.net.IPOrDomain\x12\x0c\n\x04port\x18\x02 \x01(\r\x12\x0e\n\x06method\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x14\n\x0cudp_over_tcp\x18\x05 \x01(\x08\x42r\n\x1f\x63om.xray.proxy.shadowsocks_2022P\x01Z0github.com/xtls/xray-core/proxy/shadowsocks_2022\xaa\x02\x1aXray.Proxy.Shadowsocks2022b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#proxy/shadowsocks_2022/config.proto\x12\x1bxray.proxy.shadowsocks_2022\x1a\x18\x63ommon/net/network.proto\x1a\x18\x63ommon/net/address.proto\"t\n\x0cServerConfig\x12\x0e\n\x06method\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\x05\x12)\n\x07network\x18\x05 \x03(\x0e\x32\x18.xray.common.net.Network\"\x91\x01\n\x15MultiUserServerConfig\x12\x0e\n\x06method\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x30\n\x05users\x18\x03 \x03(\x0b\x32!.xray.proxy.shadowsocks_2022.User\x12)\n\x07network\x18\x04 \x03(\x0e\x32\x18.xray.common.net.Network\"1\n\x04User\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\r\n\x05level\x18\x03 \x01(\x05\"g\n\x0c\x43lientConfig\x12,\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0b\x32\x1b.xray.common.net.IPOrDomain\x12\x0c\n\x04port\x18\x02 \x01(\r\x12\x0e\n\x06method\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\tBr\n\x1f\x63om.xray.proxy.shadowsocks_2022P\x01Z0github.com/xtls/xray-core/proxy/shadowsocks_2022\xaa\x02\x1aXray.Proxy.Shadowsocks2022b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,5 +41,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USER']._serialized_start=386
   _globals['_USER']._serialized_end=435
   _globals['_CLIENTCONFIG']._serialized_start=437
-  _globals['_CLIENTCONFIG']._serialized_end=562
+  _globals['_CLIENTCONFIG']._serialized_end=540
 # @@protoc_insertion_point(module_scope)
