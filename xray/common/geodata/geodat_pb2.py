@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x63ommon/geodata/geodat.proto\x12\x13xray.common.geodata\"\x8a\x02\n\x06\x44omain\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .xray.common.geodata.Domain.Type\x12\r\n\x05value\x18\x02 \x01(\t\x12\x38\n\tattribute\x18\x03 \x03(\x0b\x32%.xray.common.geodata.Domain.Attribute\x1aR\n\tAttribute\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x14\n\nbool_value\x18\x02 \x01(\x08H\x00\x12\x13\n\tint_value\x18\x03 \x01(\x03H\x00\x42\r\n\x0btyped_value\"3\n\x04Type\x12\n\n\x06Substr\x10\x00\x12\t\n\x05Regex\x10\x01\x12\n\n\x06\x44omain\x10\x02\x12\x08\n\x04\x46ull\x10\x03\"D\n\x07GeoSite\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x06\x64omain\x18\x02 \x03(\x0b\x32\x1b.xray.common.geodata.Domain\":\n\x0bGeoSiteList\x12+\n\x05\x65ntry\x18\x01 \x03(\x0b\x32\x1c.xray.common.geodata.GeoSite\"8\n\x0bGeoSiteRule\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\r\n\x05\x61ttrs\x18\x03 \x01(\t\"y\n\nDomainRule\x12\x33\n\x07geosite\x18\x01 \x01(\x0b\x32 .xray.common.geodata.GeoSiteRuleH\x00\x12-\n\x06\x63ustom\x18\x02 \x01(\x0b\x32\x1b.xray.common.geodata.DomainH\x00\x42\x07\n\x05value\"\"\n\x04\x43IDR\x12\n\n\x02ip\x18\x01 \x01(\x0c\x12\x0e\n\x06prefix\x18\x02 \x01(\r\"J\n\x08\x43IDRRule\x12\'\n\x04\x63idr\x18\x01 \x01(\x0b\x32\x19.xray.common.geodata.CIDR\x12\x15\n\rreverse_match\x18\x02 \x01(\x08\"U\n\x05GeoIP\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\'\n\x04\x63idr\x18\x02 \x03(\x0b\x32\x19.xray.common.geodata.CIDR\x12\x15\n\rreverse_match\x18\x03 \x01(\x08\"6\n\tGeoIPList\x12)\n\x05\x65ntry\x18\x01 \x03(\x0b\x32\x1a.xray.common.geodata.GeoIP\">\n\tGeoIPRule\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x15\n\rreverse_match\x18\x03 \x01(\x08\"s\n\x06IPRule\x12/\n\x05geoip\x18\x01 \x01(\x0b\x32\x1e.xray.common.geodata.GeoIPRuleH\x00\x12/\n\x06\x63ustom\x18\x02 \x01(\x0b\x32\x1d.xray.common.geodata.CIDRRuleH\x00\x42\x07\n\x05valueB[\n\x17\x63om.xray.common.geodataP\x01Z(github.com/xtls/xray-core/common/geodata\xaa\x02\x13Xray.Common.Geodatab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x63ommon/geodata/geodat.proto\x12\x13xray.common.geodata\"\x8a\x02\n\x06\x44omain\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .xray.common.geodata.Domain.Type\x12\r\n\x05value\x18\x02 \x01(\t\x12\x38\n\tattribute\x18\x03 \x03(\x0b\x32%.xray.common.geodata.Domain.Attribute\x1aR\n\tAttribute\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x14\n\nbool_value\x18\x02 \x01(\x08H\x00\x12\x13\n\tint_value\x18\x03 \x01(\x03H\x00\x42\r\n\x0btyped_value\"3\n\x04Type\x12\n\n\x06Substr\x10\x00\x12\t\n\x05Regex\x10\x01\x12\n\n\x06\x44omain\x10\x02\x12\x08\n\x04\x46ull\x10\x03\"D\n\x07GeoSite\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12+\n\x06\x64omain\x18\x02 \x03(\x0b\x32\x1b.xray.common.geodata.Domain\":\n\x0bGeoSiteList\x12+\n\x05\x65ntry\x18\x01 \x03(\x0b\x32\x1c.xray.common.geodata.GeoSite\"8\n\x0bGeoSiteRule\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\r\n\x05\x61ttrs\x18\x03 \x01(\t\"y\n\nDomainRule\x12\x33\n\x07geosite\x18\x01 \x01(\x0b\x32 .xray.common.geodata.GeoSiteRuleH\x00\x12-\n\x06\x63ustom\x18\x02 \x01(\x0b\x32\x1b.xray.common.geodata.DomainH\x00\x42\x07\n\x05value\"\"\n\x04\x43IDR\x12\n\n\x02ip\x18\x01 \x01(\x0c\x12\x0e\n\x06prefix\x18\x02 \x01(\r\"U\n\x05GeoIP\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\'\n\x04\x63idr\x18\x02 \x03(\x0b\x32\x19.xray.common.geodata.CIDR\x12\x15\n\rreverse_match\x18\x03 \x01(\x08\"6\n\tGeoIPList\x12)\n\x05\x65ntry\x18\x01 \x03(\x0b\x32\x1a.xray.common.geodata.GeoIP\">\n\tGeoIPRule\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x15\n\rreverse_match\x18\x03 \x01(\x08\"o\n\x06IPRule\x12/\n\x05geoip\x18\x01 \x01(\x0b\x32\x1e.xray.common.geodata.GeoIPRuleH\x00\x12+\n\x06\x63ustom\x18\x02 \x01(\x0b\x32\x19.xray.common.geodata.CIDRH\x00\x42\x07\n\x05valueB[\n\x17\x63om.xray.common.geodataP\x01Z(github.com/xtls/xray-core/common/geodata\xaa\x02\x13Xray.Common.Geodatab\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -48,14 +48,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DOMAINRULE']._serialized_end=630
   _globals['_CIDR']._serialized_start=632
   _globals['_CIDR']._serialized_end=666
-  _globals['_CIDRRULE']._serialized_start=668
-  _globals['_CIDRRULE']._serialized_end=742
-  _globals['_GEOIP']._serialized_start=744
-  _globals['_GEOIP']._serialized_end=829
-  _globals['_GEOIPLIST']._serialized_start=831
-  _globals['_GEOIPLIST']._serialized_end=885
-  _globals['_GEOIPRULE']._serialized_start=887
-  _globals['_GEOIPRULE']._serialized_end=949
-  _globals['_IPRULE']._serialized_start=951
-  _globals['_IPRULE']._serialized_end=1066
+  _globals['_GEOIP']._serialized_start=668
+  _globals['_GEOIP']._serialized_end=753
+  _globals['_GEOIPLIST']._serialized_start=755
+  _globals['_GEOIPLIST']._serialized_end=809
+  _globals['_GEOIPRULE']._serialized_start=811
+  _globals['_GEOIPRULE']._serialized_end=873
+  _globals['_IPRULE']._serialized_start=875
+  _globals['_IPRULE']._serialized_end=986
 # @@protoc_insertion_point(module_scope)
