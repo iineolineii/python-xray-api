@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$transport/internet/grpc/config.proto\x12%xray.transport.internet.grpc.encoding\"\x93\x01\n\x06\x43onfig\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x14\n\x0cservice_name\x18\x02 \x01(\t\x12\x12\n\nmulti_mode\x18\x03 \x01(\x08\x12\x14\n\x0cidle_timeout\x18\x04 \x01(\x05\x12\x1c\n\x14health_check_timeout\x18\x05 \x01(\x05\x12\x1d\n\x15permit_without_stream\x18\x06 \x01(\x08\x42\x33Z1github.com/xtls/xray-core/transport/internet/grpcb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$transport/internet/grpc/config.proto\x12%xray.transport.internet.grpc.encoding\"@\n\x06\x43onfig\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x14\n\x0cservice_name\x18\x02 \x01(\t\x12\x12\n\nmulti_mode\x18\x03 \x01(\x08\x42\x33Z1github.com/xtls/xray-core/transport/internet/grpcb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +32,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.grpc.con
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/xtls/xray-core/transport/internet/grpc'
-  _globals['_CONFIG']._serialized_start=80
-  _globals['_CONFIG']._serialized_end=227
+  _globals['_CONFIG']._serialized_start=79
+  _globals['_CONFIG']._serialized_end=143
 # @@protoc_insertion_point(module_scope)
