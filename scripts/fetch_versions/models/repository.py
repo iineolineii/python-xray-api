@@ -3,7 +3,6 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from tempfile import TemporaryDirectory
 
-from ..errors import InvalidVersionFormatError, ReleaseNotFoundError
 from .tag import Tag
 from .version import Version
 from ..utils import git
@@ -57,11 +56,7 @@ class Repository:
     @property
     def versions(self) -> Iterator["Version"]:
         for tag in self.tags:
-            try:
-                version = Version.parse(tag.name)
-
-            except (InvalidVersionFormatError, ReleaseNotFoundError):
-                continue # Skip non-semver tags or tags without a GitHub release
+            version = Version.parse(tag.name)
 
             if self.remote_url:
                 version.fetch_prerelease_status(self.name)
