@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from xray.transport.internet import config_pb2 as transport_dot_internet_dot_config__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0transport/internet/finalmask/udphop/config.proto\x12(xray.transport.internet.finalmask.udphop\"\x97\x01\n\x06\x43onfig\x12\r\n\x05local\x18\x02 \x01(\x08\x12\x0e\n\x06remote\x18\x03 \x01(\x08\x12\x13\n\x0bremote_once\x18\x04 \x01(\x08\x12\x14\n\x0cinterval_min\x18\x05 \x01(\x03\x12\x14\n\x0cinterval_max\x18\x06 \x01(\x03\x12\x11\n\tremoteIPs\x18\x07 \x03(\t\x12\x14\n\x0cremote_ports\x18\x08 \x03(\rJ\x04\x08\x01\x10\x02\x42\x9a\x01\n,com.xray.transport.internet.finalmask.udphopP\x01Z=github.com/xtls/xray-core/transport/internet/finalmask/udphop\xaa\x02(Xray.Transport.Internet.Finalmask.Udphopb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0transport/internet/finalmask/udphop/config.proto\x12(xray.transport.internet.finalmask.udphop\x1a\x1ftransport/internet/config.proto\"\xc9\x01\n\x06\x43onfig\x12\x36\n\x07sockopt\x18\x01 \x01(\x0b\x32%.xray.transport.internet.SocketConfig\x12\r\n\x05local\x18\x02 \x01(\x08\x12\x0e\n\x06remote\x18\x03 \x01(\x08\x12\x13\n\x0bremote_once\x18\x04 \x01(\x08\x12\x14\n\x0cinterval_min\x18\x05 \x01(\x03\x12\x14\n\x0cinterval_max\x18\x06 \x01(\x03\x12\x14\n\x0cremote_ports\x18\x07 \x03(\r\x12\x11\n\tremoteIPs\x18\x08 \x03(\tB\x9a\x01\n,com.xray.transport.internet.finalmask.udphopP\x01Z=github.com/xtls/xray-core/transport/internet/finalmask/udphop\xaa\x02(Xray.Transport.Internet.Finalmask.Udphopb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.finalmas
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n,com.xray.transport.internet.finalmask.udphopP\001Z=github.com/xtls/xray-core/transport/internet/finalmask/udphop\252\002(Xray.Transport.Internet.Finalmask.Udphop'
-  _globals['_CONFIG']._serialized_start=95
-  _globals['_CONFIG']._serialized_end=246
+  _globals['_CONFIG']._serialized_start=128
+  _globals['_CONFIG']._serialized_end=329
 # @@protoc_insertion_point(module_scope)

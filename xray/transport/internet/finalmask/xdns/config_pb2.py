@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.transport/internet/finalmask/xdns/config.proto\x12&xray.transport.internet.finalmask.xdns\"\x18\n\x06\x43onfig\x12\x0e\n\x06\x64omain\x18\x01 \x01(\tB\x94\x01\n*com.xray.transport.internet.finalmask.xdnsP\x01Z;github.com/xtls/xray-core/transport/internet/finalmask/xdns\xaa\x02&Xray.Transport.Internet.Finalmask.Xdnsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.transport/internet/finalmask/xdns/config.proto\x12&xray.transport.internet.finalmask.xdns\",\n\x06\x43onfig\x12\x0f\n\x07\x64omains\x18\x01 \x03(\t\x12\x11\n\tresolvers\x18\x02 \x03(\tB\x94\x01\n*com.xray.transport.internet.finalmask.xdnsP\x01Z;github.com/xtls/xray-core/transport/internet/finalmask/xdns\xaa\x02&Xray.Transport.Internet.Finalmask.Xdnsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n*com.xray.transport.internet.finalmask.xdnsP\001Z;github.com/xtls/xray-core/transport/internet/finalmask/xdns\252\002&Xray.Transport.Internet.Finalmask.Xdns'
   _globals['_CONFIG']._serialized_start=90
-  _globals['_CONFIG']._serialized_end=114
+  _globals['_CONFIG']._serialized_end=134
 # @@protoc_insertion_point(module_scope)

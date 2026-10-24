@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4transport/internet/finalmask/salamander/config.proto\x12,xray.transport.internet.finalmask.salamander\"\x1a\n\x06\x43onfig\x12\x10\n\x08password\x18\x01 \x01(\tB\xa6\x01\n0com.xray.transport.internet.finalmask.salamanderP\x01ZAgithub.com/xtls/xray-core/transport/internet/finalmask/salamander\xaa\x02,Xray.Transport.Internet.Finalmask.Salamanderb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4transport/internet/finalmask/salamander/config.proto\x12,xray.transport.internet.finalmask.salamander\"\x1a\n\x06\x43onfig\x12\x10\n\x08password\x18\x01 \x01(\t\"M\n\x0bGeckoConfig\x12\x10\n\x08password\x18\x01 \x01(\t\x12\x15\n\rMinPacketSize\x18\x02 \x01(\x05\x12\x15\n\rMaxPacketSize\x18\x03 \x01(\x05\x42\xa6\x01\n0com.xray.transport.internet.finalmask.salamanderP\x01ZAgithub.com/xtls/xray-core/transport/internet/finalmask/salamander\xaa\x02,Xray.Transport.Internet.Finalmask.Salamanderb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,4 +34,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n0com.xray.transport.internet.finalmask.salamanderP\001ZAgithub.com/xtls/xray-core/transport/internet/finalmask/salamander\252\002,Xray.Transport.Internet.Finalmask.Salamander'
   _globals['_CONFIG']._serialized_start=102
   _globals['_CONFIG']._serialized_end=128
+  _globals['_GECKOCONFIG']._serialized_start=130
+  _globals['_GECKOCONFIG']._serialized_end=207
 # @@protoc_insertion_point(module_scope)

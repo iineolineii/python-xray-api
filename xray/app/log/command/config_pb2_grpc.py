@@ -5,7 +5,7 @@ import warnings
 
 from xray.app.log.command import config_pb2 as app_dot_log_dot_command_dot_config__pb2
 
-GRPC_GENERATED_VERSION = '1.84.1'
+GRPC_GENERATED_VERSION = '1.84.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
