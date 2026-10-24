@@ -49,11 +49,6 @@ class HandlerServiceStub:
                 request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundRequest.SerializeToString,
                 response_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundResponse.FromString,
                 _registered_method=True)
-        self.ListInbounds = channel.unary_unary(
-                '/xray.app.proxyman.command.HandlerService/ListInbounds',
-                request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.ListInboundsRequest.SerializeToString,
-                response_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.ListInboundsResponse.FromString,
-                _registered_method=True)
         self.GetInboundUsers = channel.unary_unary(
                 '/xray.app.proxyman.command.HandlerService/GetInboundUsers',
                 request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserRequest.SerializeToString,
@@ -79,11 +74,6 @@ class HandlerServiceStub:
                 request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterOutboundRequest.SerializeToString,
                 response_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterOutboundResponse.FromString,
                 _registered_method=True)
-        self.ListOutbounds = channel.unary_unary(
-                '/xray.app.proxyman.command.HandlerService/ListOutbounds',
-                request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.ListOutboundsRequest.SerializeToString,
-                response_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.ListOutboundsResponse.FromString,
-                _registered_method=True)
 
 
 class HandlerServiceServicer:
@@ -102,12 +92,6 @@ class HandlerServiceServicer:
         raise NotImplementedError('Method not implemented!')
 
     def AlterInbound(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListInbounds(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -143,12 +127,6 @@ class HandlerServiceServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListOutbounds(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_HandlerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -166,11 +144,6 @@ def add_HandlerServiceServicer_to_server(servicer, server):
                     servicer.AlterInbound,
                     request_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundRequest.FromString,
                     response_serializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundResponse.SerializeToString,
-            ),
-            'ListInbounds': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListInbounds,
-                    request_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.ListInboundsRequest.FromString,
-                    response_serializer=app_dot_proxyman_dot_command_dot_command__pb2.ListInboundsResponse.SerializeToString,
             ),
             'GetInboundUsers': grpc.unary_unary_rpc_method_handler(
                     servicer.GetInboundUsers,
@@ -196,11 +169,6 @@ def add_HandlerServiceServicer_to_server(servicer, server):
                     servicer.AlterOutbound,
                     request_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterOutboundRequest.FromString,
                     response_serializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterOutboundResponse.SerializeToString,
-            ),
-            'ListOutbounds': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListOutbounds,
-                    request_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.ListOutboundsRequest.FromString,
-                    response_serializer=app_dot_proxyman_dot_command_dot_command__pb2.ListOutboundsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -284,33 +252,6 @@ class HandlerService:
             '/xray.app.proxyman.command.HandlerService/AlterInbound',
             app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundRequest.SerializeToString,
             app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListInbounds(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/xray.app.proxyman.command.HandlerService/ListInbounds',
-            app_dot_proxyman_dot_command_dot_command__pb2.ListInboundsRequest.SerializeToString,
-            app_dot_proxyman_dot_command_dot_command__pb2.ListInboundsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -446,33 +387,6 @@ class HandlerService:
             '/xray.app.proxyman.command.HandlerService/AlterOutbound',
             app_dot_proxyman_dot_command_dot_command__pb2.AlterOutboundRequest.SerializeToString,
             app_dot_proxyman_dot_command_dot_command__pb2.AlterOutboundResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListOutbounds(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/xray.app.proxyman.command.HandlerService/ListOutbounds',
-            app_dot_proxyman_dot_command_dot_command__pb2.ListOutboundsRequest.SerializeToString,
-            app_dot_proxyman_dot_command_dot_command__pb2.ListOutboundsResponse.FromString,
             options,
             channel_credentials,
             insecure,

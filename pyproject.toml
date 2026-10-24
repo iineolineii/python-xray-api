@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "python-xray-api"
-version = "25.6.7"
+version = "25.5.16"
 description = "Auto-generated Python gRPC and Protobuf bindings for Xray-core"
 readme = "README.md"
 license-files = [
