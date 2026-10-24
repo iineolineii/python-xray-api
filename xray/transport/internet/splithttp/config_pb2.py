@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from xray.transport.internet import config_pb2 as transport_dot_internet_dot_config__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)transport/internet/splithttp/config.proto\x12!xray.transport.internet.splithttp\x1a\x1ftransport/internet/config.proto\"\'\n\x0bRangeConfig\x12\x0c\n\x04\x66rom\x18\x01 \x01(\x05\x12\n\n\x02to\x18\x02 \x01(\x05\"\x90\x03\n\nXmuxConfig\x12\x46\n\x0emaxConcurrency\x18\x01 \x01(\x0b\x32..xray.transport.internet.splithttp.RangeConfig\x12\x46\n\x0emaxConnections\x18\x02 \x01(\x0b\x32..xray.transport.internet.splithttp.RangeConfig\x12\x46\n\x0e\x63MaxReuseTimes\x18\x03 \x01(\x0b\x32..xray.transport.internet.splithttp.RangeConfig\x12\x46\n\x0e\x63MaxLifetimeMs\x18\x04 \x01(\x0b\x32..xray.transport.internet.splithttp.RangeConfig\x12H\n\x10hMaxRequestTimes\x18\x05 \x01(\x0b\x32..xray.transport.internet.splithttp.RangeConfig\x12\x18\n\x10hKeepAlivePeriod\x18\x06 \x01(\x03\"\xd1\x04\n\x06\x43onfig\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04mode\x18\x03 \x01(\t\x12G\n\x07headers\x18\x04 \x03(\x0b\x32\x36.xray.transport.internet.splithttp.Config.HeadersEntry\x12\x45\n\rxPaddingBytes\x18\x05 \x01(\x0b\x32..xray.transport.internet.splithttp.RangeConfig\x12\x14\n\x0cnoGRPCHeader\x18\x06 \x01(\x08\x12\x13\n\x0bnoSSEHeader\x18\x07 \x01(\x08\x12J\n\x12scMaxEachPostBytes\x18\x08 \x01(\x0b\x32..xray.transport.internet.splithttp.RangeConfig\x12L\n\x14scMinPostsIntervalMs\x18\t \x01(\x0b\x32..xray.transport.internet.splithttp.RangeConfig\x12\x1a\n\x12scMaxBufferedPosts\x18\n \x01(\x03\x12;\n\x04xmux\x18\x0b \x01(\x0b\x32-.xray.transport.internet.splithttp.XmuxConfig\x12?\n\x10\x64ownloadSettings\x18\x0c \x01(\x0b\x32%.xray.transport.internet.StreamConfig\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x85\x01\n%com.xray.transport.internet.splithttpP\x01Z6github.com/xtls/xray-core/transport/internet/splithttp\xaa\x02!Xray.Transport.Internet.SplitHttpb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)transport/internet/splithttp/config.proto\x12!xray.transport.internet.splithttp\x1a\x1ftransport/internet/config.proto\"\xab\x05\n\x06\x43onfig\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x45\n\x06header\x18\x03 \x03(\x0b\x32\x35.xray.transport.internet.splithttp.Config.HeaderEntry\x12P\n\x14scMaxConcurrentPosts\x18\x04 \x01(\x0b\x32\x32.xray.transport.internet.splithttp.RandRangeConfig\x12N\n\x12scMaxEachPostBytes\x18\x05 \x01(\x0b\x32\x32.xray.transport.internet.splithttp.RandRangeConfig\x12P\n\x14scMinPostsIntervalMs\x18\x06 \x01(\x0b\x32\x32.xray.transport.internet.splithttp.RandRangeConfig\x12\x13\n\x0bnoSSEHeader\x18\x07 \x01(\x08\x12I\n\rxPaddingBytes\x18\x08 \x01(\x0b\x32\x32.xray.transport.internet.splithttp.RandRangeConfig\x12=\n\x04xmux\x18\t \x01(\x0b\x32/.xray.transport.internet.splithttp.Multiplexing\x12?\n\x10\x64ownloadSettings\x18\n \x01(\x0b\x32%.xray.transport.internet.StreamConfig\x12\x0c\n\x04mode\x18\x0b \x01(\t\x12\x14\n\x0cnoGRPCHeader\x18\x0c \x01(\x08\x12\x17\n\x0fkeepAlivePeriod\x18\r \x01(\x03\x1a-\n\x0bHeaderEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x0fRandRangeConfig\x12\x0c\n\x04\x66rom\x18\x01 \x01(\x05\x12\n\n\x02to\x18\x02 \x01(\x05\"\xbe\x02\n\x0cMultiplexing\x12J\n\x0emaxConcurrency\x18\x01 \x01(\x0b\x32\x32.xray.transport.internet.splithttp.RandRangeConfig\x12J\n\x0emaxConnections\x18\x02 \x01(\x0b\x32\x32.xray.transport.internet.splithttp.RandRangeConfig\x12J\n\x0e\x63MaxReuseTimes\x18\x03 \x01(\x0b\x32\x32.xray.transport.internet.splithttp.RandRangeConfig\x12J\n\x0e\x63MaxLifetimeMs\x18\x04 \x01(\x0b\x32\x32.xray.transport.internet.splithttp.RandRangeConfigB\x85\x01\n%com.xray.transport.internet.splithttpP\x01Z6github.com/xtls/xray-core/transport/internet/splithttp\xaa\x02!Xray.Transport.Internet.SplitHttpb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,14 +33,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.splithtt
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n%com.xray.transport.internet.splithttpP\001Z6github.com/xtls/xray-core/transport/internet/splithttp\252\002!Xray.Transport.Internet.SplitHttp'
-  _globals['_CONFIG_HEADERSENTRY']._loaded_options = None
-  _globals['_CONFIG_HEADERSENTRY']._serialized_options = b'8\001'
-  _globals['_RANGECONFIG']._serialized_start=113
-  _globals['_RANGECONFIG']._serialized_end=152
-  _globals['_XMUXCONFIG']._serialized_start=155
-  _globals['_XMUXCONFIG']._serialized_end=555
-  _globals['_CONFIG']._serialized_start=558
-  _globals['_CONFIG']._serialized_end=1151
-  _globals['_CONFIG_HEADERSENTRY']._serialized_start=1105
-  _globals['_CONFIG_HEADERSENTRY']._serialized_end=1151
+  _globals['_CONFIG_HEADERENTRY']._loaded_options = None
+  _globals['_CONFIG_HEADERENTRY']._serialized_options = b'8\001'
+  _globals['_CONFIG']._serialized_start=114
+  _globals['_CONFIG']._serialized_end=797
+  _globals['_CONFIG_HEADERENTRY']._serialized_start=752
+  _globals['_CONFIG_HEADERENTRY']._serialized_end=797
+  _globals['_RANDRANGECONFIG']._serialized_start=799
+  _globals['_RANDRANGECONFIG']._serialized_end=842
+  _globals['_MULTIPLEXING']._serialized_start=845
+  _globals['_MULTIPLEXING']._serialized_end=1163
 # @@protoc_insertion_point(module_scope)
