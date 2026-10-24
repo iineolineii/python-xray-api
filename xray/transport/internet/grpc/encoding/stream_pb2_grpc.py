@@ -5,7 +5,7 @@ import warnings
 
 from xray.transport.internet.grpc.encoding import stream_pb2 as transport_dot_internet_dot_grpc_dot_encoding_dot_stream__pb2
 
-GRPC_GENERATED_VERSION = '1.84.0'
+GRPC_GENERATED_VERSION = '1.84.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
