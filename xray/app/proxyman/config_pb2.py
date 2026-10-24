@@ -28,7 +28,7 @@ from xray.transport.internet import config_pb2 as transport_dot_internet_dot_con
 from xray.common.serial import typed_message_pb2 as common_dot_serial_dot_typed__message__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61pp/proxyman/config.proto\x12\x11xray.app.proxyman\x1a\x18\x63ommon/net/address.proto\x1a\x15\x63ommon/net/port.proto\x1a\x1ftransport/internet/config.proto\x1a!common/serial/typed_message.proto\"\x0f\n\rInboundConfig\"\x84\x03\n\x12\x41llocationStrategy\x12\x38\n\x04type\x18\x01 \x01(\x0e\x32*.xray.app.proxyman.AllocationStrategy.Type\x12X\n\x0b\x63oncurrency\x18\x02 \x01(\x0b\x32\x43.xray.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency\x12P\n\x07refresh\x18\x03 \x01(\x0b\x32?.xray.app.proxyman.AllocationStrategy.AllocationStrategyRefresh\x1a.\n\x1d\x41llocationStrategyConcurrency\x12\r\n\x05value\x18\x01 \x01(\r\x1a*\n\x19\x41llocationStrategyRefresh\x12\r\n\x05value\x18\x01 \x01(\r\",\n\x04Type\x12\n\n\x06\x41lways\x10\x00\x12\n\n\x06Random\x10\x01\x12\x0c\n\x08\x45xternal\x10\x02\"p\n\x0eSniffingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x1c\n\x14\x64\x65stination_override\x18\x02 \x03(\t\x12\x18\n\x10\x64omains_excluded\x18\x03 \x03(\t\x12\x15\n\rmetadata_only\x18\x04 \x01(\x08\"\x9b\x03\n\x0eReceiverConfig\x12.\n\nport_range\x18\x01 \x01(\x0b\x32\x1a.xray.common.net.PortRange\x12+\n\x06listen\x18\x02 \x01(\x0b\x32\x1b.xray.common.net.IPOrDomain\x12\x42\n\x13\x61llocation_strategy\x18\x03 \x01(\x0b\x32%.xray.app.proxyman.AllocationStrategy\x12>\n\x0fstream_settings\x18\x04 \x01(\x0b\x32%.xray.transport.internet.StreamConfig\x12$\n\x1creceive_original_destination\x18\x05 \x01(\x08\x12>\n\x0f\x64omain_override\x18\x07 \x03(\x0e\x32!.xray.app.proxyman.KnownProtocolsB\x02\x18\x01\x12<\n\x11sniffing_settings\x18\x08 \x01(\x0b\x32!.xray.app.proxyman.SniffingConfigJ\x04\x08\x06\x10\x07\"\x9a\x01\n\x14InboundHandlerConfig\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12;\n\x11receiver_settings\x18\x02 \x01(\x0b\x32 .xray.common.serial.TypedMessage\x12\x38\n\x0eproxy_settings\x18\x03 \x01(\x0b\x32 .xray.common.serial.TypedMessage\"\x10\n\x0eOutboundConfig\"\xf9\x01\n\x0cSenderConfig\x12(\n\x03via\x18\x01 \x01(\x0b\x32\x1b.xray.common.net.IPOrDomain\x12>\n\x0fstream_settings\x18\x02 \x01(\x0b\x32%.xray.transport.internet.StreamConfig\x12<\n\x0eproxy_settings\x18\x03 \x01(\x0b\x32$.xray.transport.internet.ProxyConfig\x12\x41\n\x12multiplex_settings\x18\x04 \x01(\x0b\x32%.xray.app.proxyman.MultiplexingConfig\":\n\x12MultiplexingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x13\n\x0b\x63oncurrency\x18\x02 \x01(\r*#\n\x0eKnownProtocols\x12\x08\n\x04HTTP\x10\x00\x12\x07\n\x03TLS\x10\x01\x42U\n\x15\x63om.xray.app.proxymanP\x01Z&github.com/xtls/xray-core/app/proxyman\xaa\x02\x11Xray.App.Proxymanb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61pp/proxyman/config.proto\x12\x11xray.app.proxyman\x1a\x18\x63ommon/net/address.proto\x1a\x15\x63ommon/net/port.proto\x1a\x1ftransport/internet/config.proto\x1a!common/serial/typed_message.proto\"\x0f\n\rInboundConfig\"\x84\x03\n\x12\x41llocationStrategy\x12\x38\n\x04type\x18\x01 \x01(\x0e\x32*.xray.app.proxyman.AllocationStrategy.Type\x12X\n\x0b\x63oncurrency\x18\x02 \x01(\x0b\x32\x43.xray.app.proxyman.AllocationStrategy.AllocationStrategyConcurrency\x12P\n\x07refresh\x18\x03 \x01(\x0b\x32?.xray.app.proxyman.AllocationStrategy.AllocationStrategyRefresh\x1a.\n\x1d\x41llocationStrategyConcurrency\x12\r\n\x05value\x18\x01 \x01(\r\x1a*\n\x19\x41llocationStrategyRefresh\x12\r\n\x05value\x18\x01 \x01(\r\",\n\x04Type\x12\n\n\x06\x41lways\x10\x00\x12\n\n\x06Random\x10\x01\x12\x0c\n\x08\x45xternal\x10\x02\"Y\n\x0eSniffingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x1c\n\x14\x64\x65stination_override\x18\x02 \x03(\t\x12\x18\n\x10\x64omains_excluded\x18\x03 \x03(\t\"\x9b\x03\n\x0eReceiverConfig\x12.\n\nport_range\x18\x01 \x01(\x0b\x32\x1a.xray.common.net.PortRange\x12+\n\x06listen\x18\x02 \x01(\x0b\x32\x1b.xray.common.net.IPOrDomain\x12\x42\n\x13\x61llocation_strategy\x18\x03 \x01(\x0b\x32%.xray.app.proxyman.AllocationStrategy\x12>\n\x0fstream_settings\x18\x04 \x01(\x0b\x32%.xray.transport.internet.StreamConfig\x12$\n\x1creceive_original_destination\x18\x05 \x01(\x08\x12>\n\x0f\x64omain_override\x18\x07 \x03(\x0e\x32!.xray.app.proxyman.KnownProtocolsB\x02\x18\x01\x12<\n\x11sniffing_settings\x18\x08 \x01(\x0b\x32!.xray.app.proxyman.SniffingConfigJ\x04\x08\x06\x10\x07\"\x9a\x01\n\x14InboundHandlerConfig\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12;\n\x11receiver_settings\x18\x02 \x01(\x0b\x32 .xray.common.serial.TypedMessage\x12\x38\n\x0eproxy_settings\x18\x03 \x01(\x0b\x32 .xray.common.serial.TypedMessage\"\x10\n\x0eOutboundConfig\"\xf9\x01\n\x0cSenderConfig\x12(\n\x03via\x18\x01 \x01(\x0b\x32\x1b.xray.common.net.IPOrDomain\x12>\n\x0fstream_settings\x18\x02 \x01(\x0b\x32%.xray.transport.internet.StreamConfig\x12<\n\x0eproxy_settings\x18\x03 \x01(\x0b\x32$.xray.transport.internet.ProxyConfig\x12\x41\n\x12multiplex_settings\x18\x04 \x01(\x0b\x32%.xray.app.proxyman.MultiplexingConfig\":\n\x12MultiplexingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x13\n\x0b\x63oncurrency\x18\x02 \x01(\r*#\n\x0eKnownProtocols\x12\x08\n\x04HTTP\x10\x00\x12\x07\n\x03TLS\x10\x01\x42U\n\x15\x63om.xray.app.proxymanP\x01Z&github.com/xtls/xray-core/app/proxyman\xaa\x02\x11Xray.App.Proxymanb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,8 +38,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\025com.xray.app.proxymanP\001Z&github.com/xtls/xray-core/app/proxyman\252\002\021Xray.App.Proxyman'
   _globals['_RECEIVERCONFIG'].fields_by_name['domain_override']._loaded_options = None
   _globals['_RECEIVERCONFIG'].fields_by_name['domain_override']._serialized_options = b'\030\001'
-  _globals['_KNOWNPROTOCOLS']._serialized_start=1588
-  _globals['_KNOWNPROTOCOLS']._serialized_end=1623
+  _globals['_KNOWNPROTOCOLS']._serialized_start=1565
+  _globals['_KNOWNPROTOCOLS']._serialized_end=1600
   _globals['_INBOUNDCONFIG']._serialized_start=165
   _globals['_INBOUNDCONFIG']._serialized_end=180
   _globals['_ALLOCATIONSTRATEGY']._serialized_start=183
@@ -51,15 +51,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ALLOCATIONSTRATEGY_TYPE']._serialized_start=527
   _globals['_ALLOCATIONSTRATEGY_TYPE']._serialized_end=571
   _globals['_SNIFFINGCONFIG']._serialized_start=573
-  _globals['_SNIFFINGCONFIG']._serialized_end=685
-  _globals['_RECEIVERCONFIG']._serialized_start=688
-  _globals['_RECEIVERCONFIG']._serialized_end=1099
-  _globals['_INBOUNDHANDLERCONFIG']._serialized_start=1102
-  _globals['_INBOUNDHANDLERCONFIG']._serialized_end=1256
-  _globals['_OUTBOUNDCONFIG']._serialized_start=1258
-  _globals['_OUTBOUNDCONFIG']._serialized_end=1274
-  _globals['_SENDERCONFIG']._serialized_start=1277
-  _globals['_SENDERCONFIG']._serialized_end=1526
-  _globals['_MULTIPLEXINGCONFIG']._serialized_start=1528
-  _globals['_MULTIPLEXINGCONFIG']._serialized_end=1586
+  _globals['_SNIFFINGCONFIG']._serialized_end=662
+  _globals['_RECEIVERCONFIG']._serialized_start=665
+  _globals['_RECEIVERCONFIG']._serialized_end=1076
+  _globals['_INBOUNDHANDLERCONFIG']._serialized_start=1079
+  _globals['_INBOUNDHANDLERCONFIG']._serialized_end=1233
+  _globals['_OUTBOUNDCONFIG']._serialized_start=1235
+  _globals['_OUTBOUNDCONFIG']._serialized_end=1251
+  _globals['_SENDERCONFIG']._serialized_start=1254
+  _globals['_SENDERCONFIG']._serialized_end=1503
+  _globals['_MULTIPLEXINGCONFIG']._serialized_start=1505
+  _globals['_MULTIPLEXINGCONFIG']._serialized_end=1563
 # @@protoc_insertion_point(module_scope)
