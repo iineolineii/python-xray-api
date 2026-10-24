@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pp/metrics/config.proto\x12\x10xray.app.metrics\"%\n\x06\x43onfig\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0e\n\x06listen\x18\x02 \x01(\tBR\n\x14\x63om.xray.app.metricsP\x01Z%github.com/xtls/xray-core/app/metrics\xaa\x02\x10Xray.App.Metricsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pp/metrics/config.proto\x12\x10xray.app.metrics\"\x15\n\x06\x43onfig\x12\x0b\n\x03tag\x18\x01 \x01(\tBR\n\x14\x63om.xray.app.metricsP\x01Z%github.com/xtls/xray-core/app/metrics\xaa\x02\x10Xray.App.Metricsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\024com.xray.app.metricsP\001Z%github.com/xtls/xray-core/app/metrics\252\002\020Xray.App.Metrics'
   _globals['_CONFIG']._serialized_start=46
-  _globals['_CONFIG']._serialized_end=83
+  _globals['_CONFIG']._serialized_end=67
 # @@protoc_insertion_point(module_scope)
