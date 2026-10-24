@@ -32,7 +32,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install grpcio-tools build more-itertools
+        run: pip install grpcio-tools build
 
       - name: Fetch versions
         id: versions

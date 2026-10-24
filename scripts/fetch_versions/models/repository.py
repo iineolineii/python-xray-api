@@ -10,9 +10,9 @@ from ..utils import git
 
 @dataclass
 class Repository:
-    name:           str
-    git_dir:        str | None = None
-    remote_url:     str | None = None
+    name:       str
+    git_dir:    str | None = None
+    remote_url: str | None = None
 
     temp_dir: "TemporaryDirectory | None" = field(init=False, default=None)
 
@@ -54,14 +54,18 @@ class Repository:
             yield Tag(name=name, date=date)
 
     @property
-    def versions(self) -> Iterator["Version"]:
+    def versions(self) -> list["Version"]:
+        versions: list["Version"] = []
+
         for tag in self.tags:
             version = Version.parse(tag.name)
 
             if self.remote_url:
                 version.fetch_prerelease_status(self.name)
 
-            yield version
+            versions.append(version)
+
+        return versions
 
     def __del__(self) -> None:
         if self.__temp_dir is not None:

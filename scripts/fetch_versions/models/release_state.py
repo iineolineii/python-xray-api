@@ -1,10 +1,8 @@
 from dataclasses import InitVar, dataclass, field
-from typing import Self
 
 from .repository import Repository
 from .version import Version
 from ..errors import NoSemanticVersionTagsError
-from ..utils import peek
 
 
 @dataclass
@@ -30,7 +28,7 @@ class ReleaseState:
         # Use the latest available one
         if _target_version is None:
             try:
-                self.target_version = peek(self.upstream_repo.versions)
+                self.target_version = self.upstream_repo.versions[-1]
             except StopIteration:
                 raise NoSemanticVersionTagsError(upstream)
 
@@ -44,7 +42,11 @@ class ReleaseState:
         target_line = f"Target {upstream} version: v{self.target_version}"
 
         # 0.0.0 if local repository has no published releases yet
-        self.latest_published = peek(self.local_repo.versions, default=Version(0, 0, 0))
+        if not self.local_repo.versions:
+            self.latest_published = Version(0, 0, 0)
+        else:
+            self.latest_published = self.local_repo.versions[-1]
+
         published_line = f"Latest published {upstream} version: v{self.latest_published}"
 
         # Is the target upstream version already published?

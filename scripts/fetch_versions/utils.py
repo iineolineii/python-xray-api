@@ -5,7 +5,7 @@ import os
 import subprocess
 import urllib.error
 import urllib.request
-from typing import Any, TypeVar
+from typing import TypeVar
 
 from more_itertools import peekable
 
@@ -69,22 +69,4 @@ def github(path: str) -> dict | None:
     except urllib.error.URLError as exc:
         raise RuntimeError(f"GitHub API {path} failed: {exc.reason}") from exc
 
-
-class Missing(Enum):
-    MISSING = auto()
-
-MISSING = Missing.MISSING
-
-T = TypeVar("T")
-U = TypeVar("U")
-
-def peek(source: Iterable[T], default: U | Missing = MISSING) -> T | U:
-    source = peekable(source)
-
-    if default is MISSING:
-        return source.peek()
-
-    return source.peek(default)
-
-
-__all__ = ["git", "github", "peek"]
+__all__ = ["git", "github"]
