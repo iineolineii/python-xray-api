@@ -22,7 +22,7 @@ class Version:
     def _parse(cls, text):
         match = re.match(r"^v?(?P<major>\d+)\.(?P<minor>\d+)\.(?P<patch>\d+)$", text)
         if not match:
-            raise InvalidVersionFormatError(f"Invalid version format: {text!r}")
+            raise InvalidVersionFormatError(text)
 
         return int(match.group("major")), int(match.group("minor")), int(match.group("patch"))
 

@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
+    inputs:
+      target_version:
+        description: 'Target Xray-core version (e.g., 1.2.3). Leave empty for latest.'
+        required: false
+        type: string
 
 jobs:
   check-and-update:
@@ -31,7 +36,13 @@ jobs:
 
       - name: Fetch versions
         id: versions
-        run: cd scripts && python -m fetch_versions "XTLS/Xray-core" "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+        run: |
+          cd scripts
+          if [ -n "${{ inputs.target_version }}" ]; then
+            python -m fetch_versions "XTLS/Xray-core" "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT" --target-version "${{ inputs.target_version }}"
+          else
+            python -m fetch_versions "XTLS/Xray-core" "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
+          fi
 
       - name: Clone Xray-core source
         if: steps.versions.outputs.needs_update == 'true'

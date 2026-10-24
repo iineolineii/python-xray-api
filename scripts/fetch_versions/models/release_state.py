@@ -1,4 +1,5 @@
-from dataclasses import dataclass, field
+from dataclasses import InitVar, dataclass, field
+from typing import Self
 
 from .repository import Repository
 from .version import Version
@@ -14,39 +15,51 @@ class ReleaseState:
     local_repo:    Repository
     upstream_repo: Repository
 
-    latest_upstream:   Version = field(init=False)
-    latest_published:  Version = field(init=False)
+    _target_version: InitVar[str | Version | None] = None
+
+    target_version:   Version = field(init=False)
+    latest_published: Version = field(init=False)
 
     needs_update: bool = field(init=False)
     summary:      str  = field(init=False)
 
-    def __post_init__(self) -> None:
+    def __post_init__(self, _target_version: str | Version | None) -> None:
         upstream = self.upstream_repo.name
 
-        try:
-            self.latest_upstream = peek(self.upstream_repo.versions)
-        except StopIteration:
-            raise NoSemanticVersionTagsError(upstream)
+        # If the target upstream version is not specified,
+        # Use the latest available one
+        if _target_version is None:
+            try:
+                self.target_version = peek(self.upstream_repo.versions)
+            except StopIteration:
+                raise NoSemanticVersionTagsError(upstream)
 
-        latest_line = f"Latest {upstream} version: v{self.latest_upstream}"
+        elif isinstance(_target_version, Version):
+            self.target_version = _target_version
+
+        else:
+            self.target_version = Version.parse(_target_version)
+
+        self.target_version.fetch_prerelease_status(upstream)
+        target_line = f"Target {upstream} version: v{self.target_version}"
 
         # 0.0.0 if local repository has no published releases yet
         self.latest_published = peek(self.local_repo.versions, default=Version(0, 0, 0))
         published_line = f"Latest published {upstream} version: v{self.latest_published}"
 
-        # Is the latest upstream already published?
-        if self.latest_upstream in self.local_repo.versions:
-            self.needs_update = False
-            update_status_line = f"✅ Update is not needed. Already published as v{self.latest_upstream}"
-        else:
+        # Is the target upstream version already published?
+        if self.target_version not in self.local_repo.versions:
             self.needs_update = True
-            update_status_line = f"🔄 Updating to {upstream} v{self.latest_upstream}"
+            update_status_line = f"🔄 Updating to {upstream} v{self.target_version}"
 
-        # Mirror the upstream prerelease flag
-        if self.latest_upstream.is_prerelease:
-            update_status_line += " (prerelease)"
+            # Mirror the upstream prerelease flag
+            if self.target_version.is_prerelease:
+                update_status_line += " (prerelease)"
+        else:
+            self.needs_update = False
+            update_status_line = f"✅ Update is not needed"
 
-        self.summary = published_line + "\n" + latest_line + "\n\n## " + update_status_line
+        self.summary = published_line + "\n" + target_line + "\n\n## " + update_status_line
 
     def print_summary(self, file: str) -> None:
         with open(file, "a") as f:
@@ -54,12 +67,12 @@ class ReleaseState:
 
     def print_result(self, file: str) -> None:
         with open(file, "a") as f:
-            latest_upstream_version    = str(self.latest_upstream)
+            latest_upstream_version    = str(self.target_version)
             latest_published_version   = str(self.latest_published)
 
             new_version = latest_upstream_version
 
-            is_prerelease = str(self.latest_upstream.is_prerelease).lower()
+            is_prerelease = str(self.target_version.is_prerelease).lower()
             needs_update  = str(self.needs_update)
 
             print(f"latest_upstream_version="    + latest_upstream_version,    file=f)
