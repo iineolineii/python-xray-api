@@ -39,11 +39,6 @@ class StatsServiceStub:
                 request_serializer=app_dot_stats_dot_command_dot_command__pb2.GetStatsRequest.SerializeToString,
                 response_deserializer=app_dot_stats_dot_command_dot_command__pb2.GetStatsResponse.FromString,
                 _registered_method=True)
-        self.GetStatsOnline = channel.unary_unary(
-                '/xray.app.stats.command.StatsService/GetStatsOnline',
-                request_serializer=app_dot_stats_dot_command_dot_command__pb2.GetStatsRequest.SerializeToString,
-                response_deserializer=app_dot_stats_dot_command_dot_command__pb2.GetStatsResponse.FromString,
-                _registered_method=True)
         self.QueryStats = channel.unary_unary(
                 '/xray.app.stats.command.StatsService/QueryStats',
                 request_serializer=app_dot_stats_dot_command_dot_command__pb2.QueryStatsRequest.SerializeToString,
@@ -60,12 +55,6 @@ class StatsServiceServicer:
     """Missing associated documentation comment in .proto file."""
 
     def GetStats(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetStatsOnline(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -88,11 +77,6 @@ def add_StatsServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetStats': grpc.unary_unary_rpc_method_handler(
                     servicer.GetStats,
-                    request_deserializer=app_dot_stats_dot_command_dot_command__pb2.GetStatsRequest.FromString,
-                    response_serializer=app_dot_stats_dot_command_dot_command__pb2.GetStatsResponse.SerializeToString,
-            ),
-            'GetStatsOnline': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetStatsOnline,
                     request_deserializer=app_dot_stats_dot_command_dot_command__pb2.GetStatsRequest.FromString,
                     response_serializer=app_dot_stats_dot_command_dot_command__pb2.GetStatsResponse.SerializeToString,
             ),
@@ -132,33 +116,6 @@ class StatsService:
             request,
             target,
             '/xray.app.stats.command.StatsService/GetStats',
-            app_dot_stats_dot_command_dot_command__pb2.GetStatsRequest.SerializeToString,
-            app_dot_stats_dot_command_dot_command__pb2.GetStatsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetStatsOnline(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/xray.app.stats.command.StatsService/GetStatsOnline',
             app_dot_stats_dot_command_dot_command__pb2.GetStatsRequest.SerializeToString,
             app_dot_stats_dot_command_dot_command__pb2.GetStatsResponse.FromString,
             options,

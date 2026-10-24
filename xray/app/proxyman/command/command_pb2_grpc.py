@@ -49,16 +49,6 @@ class HandlerServiceStub:
                 request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundRequest.SerializeToString,
                 response_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundResponse.FromString,
                 _registered_method=True)
-        self.GetInboundUsers = channel.unary_unary(
-                '/xray.app.proxyman.command.HandlerService/GetInboundUsers',
-                request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserRequest.SerializeToString,
-                response_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserResponse.FromString,
-                _registered_method=True)
-        self.GetInboundUsersCount = channel.unary_unary(
-                '/xray.app.proxyman.command.HandlerService/GetInboundUsersCount',
-                request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserRequest.SerializeToString,
-                response_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUsersCountResponse.FromString,
-                _registered_method=True)
         self.AddOutbound = channel.unary_unary(
                 '/xray.app.proxyman.command.HandlerService/AddOutbound',
                 request_serializer=app_dot_proxyman_dot_command_dot_command__pb2.AddOutboundRequest.SerializeToString,
@@ -92,18 +82,6 @@ class HandlerServiceServicer:
         raise NotImplementedError('Method not implemented!')
 
     def AlterInbound(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetInboundUsers(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetInboundUsersCount(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -144,16 +122,6 @@ def add_HandlerServiceServicer_to_server(servicer, server):
                     servicer.AlterInbound,
                     request_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundRequest.FromString,
                     response_serializer=app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundResponse.SerializeToString,
-            ),
-            'GetInboundUsers': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetInboundUsers,
-                    request_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserRequest.FromString,
-                    response_serializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserResponse.SerializeToString,
-            ),
-            'GetInboundUsersCount': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetInboundUsersCount,
-                    request_deserializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserRequest.FromString,
-                    response_serializer=app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUsersCountResponse.SerializeToString,
             ),
             'AddOutbound': grpc.unary_unary_rpc_method_handler(
                     servicer.AddOutbound,
@@ -252,60 +220,6 @@ class HandlerService:
             '/xray.app.proxyman.command.HandlerService/AlterInbound',
             app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundRequest.SerializeToString,
             app_dot_proxyman_dot_command_dot_command__pb2.AlterInboundResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetInboundUsers(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/xray.app.proxyman.command.HandlerService/GetInboundUsers',
-            app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserRequest.SerializeToString,
-            app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetInboundUsersCount(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/xray.app.proxyman.command.HandlerService/GetInboundUsersCount',
-            app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUserRequest.SerializeToString,
-            app_dot_proxyman_dot_command_dot_command__pb2.GetInboundUsersCountResponse.FromString,
             options,
             channel_credentials,
             insecure,
