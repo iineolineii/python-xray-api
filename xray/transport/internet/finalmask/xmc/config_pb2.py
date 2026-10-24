@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-transport/internet/finalmask/xmc/config.proto\x12%xray.transport.internet.finalmask.xmc\"]\n\x07Profile\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0c\n\x04uuid\x18\x02 \x01(\x0c\x12\x16\n\x0etextures_value\x18\x03 \x01(\t\x12\x1a\n\x12textures_signature\x18\x04 \x01(\t\"\xa5\x01\n\x06\x43onfig\x12\x10\n\x08password\x18\x01 \x01(\t\x12\x17\n\x0frsa_private_key\x18\x08 \x01(\x0c\x12\x16\n\x0ersa_public_key\x18\t \x01(\x0c\x12\x10\n\x08hostname\x18\n \x01(\t\x12@\n\x08profiles\x18\x0b \x03(\x0b\x32..xray.transport.internet.finalmask.xmc.ProfileJ\x04\x08\x02\x10\x03\x42\x91\x01\n)com.xray.transport.internet.finalmask.xmcP\x01Z:github.com/xtls/xray-core/transport/internet/finalmask/xmc\xaa\x02%Xray.Transport.Internet.Finalmask.XMCb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-transport/internet/finalmask/xmc/config.proto\x12%xray.transport.internet.finalmask.xmc\"p\n\x06\x43onfig\x12\x10\n\x08password\x18\x01 \x01(\t\x12\x11\n\tusernames\x18\x02 \x03(\t\x12\x17\n\x0frsa_private_key\x18\x08 \x01(\x0c\x12\x16\n\x0ersa_public_key\x18\t \x01(\x0c\x12\x10\n\x08hostname\x18\n \x01(\tB\x91\x01\n)com.xray.transport.internet.finalmask.xmcP\x01Z:github.com/xtls/xray-core/transport/internet/finalmask/xmc\xaa\x02%Xray.Transport.Internet.Finalmask.XMCb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +32,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.finalmas
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n)com.xray.transport.internet.finalmask.xmcP\001Z:github.com/xtls/xray-core/transport/internet/finalmask/xmc\252\002%Xray.Transport.Internet.Finalmask.XMC'
-  _globals['_PROFILE']._serialized_start=88
-  _globals['_PROFILE']._serialized_end=181
-  _globals['_CONFIG']._serialized_start=184
-  _globals['_CONFIG']._serialized_end=349
+  _globals['_CONFIG']._serialized_start=88
+  _globals['_CONFIG']._serialized_end=200
 # @@protoc_insertion_point(module_scope)
