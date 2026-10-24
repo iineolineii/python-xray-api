@@ -64,11 +64,6 @@ class RoutingServiceStub:
                 request_serializer=app_dot_router_dot_command_dot_command__pb2.RemoveRuleRequest.SerializeToString,
                 response_deserializer=app_dot_router_dot_command_dot_command__pb2.RemoveRuleResponse.FromString,
                 _registered_method=True)
-        self.ListRule = channel.unary_unary(
-                '/xray.app.router.command.RoutingService/ListRule',
-                request_serializer=app_dot_router_dot_command_dot_command__pb2.ListRuleRequest.SerializeToString,
-                response_deserializer=app_dot_router_dot_command_dot_command__pb2.ListRuleResponse.FromString,
-                _registered_method=True)
 
 
 class RoutingServiceServicer:
@@ -110,12 +105,6 @@ class RoutingServiceServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListRule(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_RoutingServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -148,11 +137,6 @@ def add_RoutingServiceServicer_to_server(servicer, server):
                     servicer.RemoveRule,
                     request_deserializer=app_dot_router_dot_command_dot_command__pb2.RemoveRuleRequest.FromString,
                     response_serializer=app_dot_router_dot_command_dot_command__pb2.RemoveRuleResponse.SerializeToString,
-            ),
-            'ListRule': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListRule,
-                    request_deserializer=app_dot_router_dot_command_dot_command__pb2.ListRuleRequest.FromString,
-                    response_serializer=app_dot_router_dot_command_dot_command__pb2.ListRuleResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -317,33 +301,6 @@ class RoutingService:
             '/xray.app.router.command.RoutingService/RemoveRule',
             app_dot_router_dot_command_dot_command__pb2.RemoveRuleRequest.SerializeToString,
             app_dot_router_dot_command_dot_command__pb2.RemoveRuleResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListRule(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/xray.app.router.command.RoutingService/ListRule',
-            app_dot_router_dot_command_dot_command__pb2.ListRuleRequest.SerializeToString,
-            app_dot_router_dot_command_dot_command__pb2.ListRuleResponse.FromString,
             options,
             channel_credentials,
             insecure,
