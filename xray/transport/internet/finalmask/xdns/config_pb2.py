@@ -22,10 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from xray.common.serial import typed_message_pb2 as common_dot_serial_dot_typed__message__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.transport/internet/finalmask/xdns/config.proto\x12&xray.transport.internet.finalmask.xdns\x1a!common/serial/typed_message.proto\"a\n\x0b\x44omainProto\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tlen_limit\x18\x02 \x01(\x05\x12\x13\n\x0blabel_limit\x18\x03 \x01(\x05\x12\r\n\x05types\x18\x04 \x03(\x05\x12\r\n\x05\x65\x64ns0\x18\x05 \x01(\x05\"\x97\x01\n\x06\x43onfig\x12\x44\n\x07\x64omains\x18\x01 \x03(\x0b\x32\x33.xray.transport.internet.finalmask.xdns.DomainProto\x12\x33\n\tresolvers\x18\x02 \x03(\x0b\x32 .xray.common.serial.TypedMessage\x12\x12\n\nextra_poll\x18\x03 \x01(\x05\" \n\x10TCPResolverProto\x12\x0c\n\x04\x61\x64\x64r\x18\x01 \x01(\t\" \n\x10UDPResolverProto\x12\x0c\n\x04\x61\x64\x64r\x18\x01 \x01(\tB\x94\x01\n*com.xray.transport.internet.finalmask.xdnsP\x01Z;github.com/xtls/xray-core/transport/internet/finalmask/xdns\xaa\x02&Xray.Transport.Internet.Finalmask.Xdnsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.transport/internet/finalmask/xdns/config.proto\x12&xray.transport.internet.finalmask.xdns\"\x18\n\x06\x43onfig\x12\x0e\n\x06\x64omain\x18\x01 \x01(\tB\x94\x01\n*com.xray.transport.internet.finalmask.xdnsP\x01Z;github.com/xtls/xray-core/transport/internet/finalmask/xdns\xaa\x02&Xray.Transport.Internet.Finalmask.Xdnsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +32,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.finalmas
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n*com.xray.transport.internet.finalmask.xdnsP\001Z;github.com/xtls/xray-core/transport/internet/finalmask/xdns\252\002&Xray.Transport.Internet.Finalmask.Xdns'
-  _globals['_DOMAINPROTO']._serialized_start=125
-  _globals['_DOMAINPROTO']._serialized_end=222
-  _globals['_CONFIG']._serialized_start=225
-  _globals['_CONFIG']._serialized_end=376
-  _globals['_TCPRESOLVERPROTO']._serialized_start=378
-  _globals['_TCPRESOLVERPROTO']._serialized_end=410
-  _globals['_UDPRESOLVERPROTO']._serialized_start=412
-  _globals['_UDPRESOLVERPROTO']._serialized_end=444
+  _globals['_CONFIG']._serialized_start=90
+  _globals['_CONFIG']._serialized_end=114
 # @@protoc_insertion_point(module_scope)

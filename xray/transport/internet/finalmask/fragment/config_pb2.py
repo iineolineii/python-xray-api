@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2transport/internet/finalmask/fragment/config.proto\x12*xray.transport.internet.finalmask.fragment\"\xb2\x01\n\x06\x43onfig\x12\x14\n\x0cpackets_from\x18\x01 \x01(\x03\x12\x12\n\npackets_to\x18\x02 \x01(\x03\x12\x15\n\rmax_split_min\x18\x07 \x01(\x03\x12\x15\n\rmax_split_max\x18\x08 \x01(\x03\x12\x13\n\x0blengths_min\x18\t \x03(\x03\x12\x13\n\x0blengths_max\x18\n \x03(\x03\x12\x12\n\ndelays_min\x18\x0b \x03(\x03\x12\x12\n\ndelays_max\x18\x0c \x03(\x03\x42\xa0\x01\n.com.xray.transport.internet.finalmask.fragmentP\x01Z?github.com/xtls/xray-core/transport/internet/finalmask/fragment\xaa\x02*Xray.Transport.Internet.Finalmask.Fragmentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2transport/internet/finalmask/fragment/config.proto\x12*xray.transport.internet.finalmask.fragment\"\xae\x01\n\x06\x43onfig\x12\x14\n\x0cpackets_from\x18\x01 \x01(\x03\x12\x12\n\npackets_to\x18\x02 \x01(\x03\x12\x12\n\nlength_min\x18\x03 \x01(\x03\x12\x12\n\nlength_max\x18\x04 \x01(\x03\x12\x11\n\tdelay_min\x18\x05 \x01(\x03\x12\x11\n\tdelay_max\x18\x06 \x01(\x03\x12\x15\n\rmax_split_min\x18\x07 \x01(\x03\x12\x15\n\rmax_split_max\x18\x08 \x01(\x03\x42\xa0\x01\n.com.xray.transport.internet.finalmask.fragmentP\x01Z?github.com/xtls/xray-core/transport/internet/finalmask/fragment\xaa\x02*Xray.Transport.Internet.Finalmask.Fragmentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n.com.xray.transport.internet.finalmask.fragmentP\001Z?github.com/xtls/xray-core/transport/internet/finalmask/fragment\252\002*Xray.Transport.Internet.Finalmask.Fragment'
   _globals['_CONFIG']._serialized_start=99
-  _globals['_CONFIG']._serialized_end=277
+  _globals['_CONFIG']._serialized_end=273
 # @@protoc_insertion_point(module_scope)

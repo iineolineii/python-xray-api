@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/transport/internet/finalmask/noise/config.proto\x12\'xray.transport.internet.finalmask.noise\"\xeb\x01\n\x07Segment\x12\x43\n\x04kind\x18\x01 \x01(\x0e\x32\x35.xray.transport.internet.finalmask.noise.Segment.Kind\x12\r\n\x05\x62ytes\x18\x02 \x01(\x0c\x12\x10\n\x08min_size\x18\x03 \x01(\x03\x12\x10\n\x08max_size\x18\x04 \x01(\x03\"h\n\x04Kind\x12\t\n\x05\x42YTES\x10\x00\x12\n\n\x06RANDOM\x10\x01\x12\x10\n\x0cRANDOM_ASCII\x10\x02\x12\x10\n\x0cRANDOM_DIGIT\x10\x03\x12\r\n\tTIMESTAMP\x10\x04\x12\x0b\n\x07\x43OUNTER\x10\x05\x12\t\n\x05NONCE\x10\x06\"\xd4\x01\n\x04Item\x12\x10\n\x08rand_min\x18\x01 \x01(\x03\x12\x10\n\x08rand_max\x18\x02 \x01(\x03\x12\x16\n\x0erand_range_min\x18\x03 \x01(\x05\x12\x16\n\x0erand_range_max\x18\x04 \x01(\x05\x12\x0e\n\x06packet\x18\x05 \x01(\x0c\x12\x11\n\tdelay_min\x18\x06 \x01(\x03\x12\x11\n\tdelay_max\x18\x07 \x01(\x03\x12\x42\n\x08segments\x18\x08 \x03(\x0b\x32\x30.xray.transport.internet.finalmask.noise.Segment\"l\n\x06\x43onfig\x12\x11\n\treset_min\x18\x01 \x01(\x03\x12\x11\n\treset_max\x18\x02 \x01(\x03\x12<\n\x05items\x18\x03 \x03(\x0b\x32-.xray.transport.internet.finalmask.noise.ItemB\x97\x01\n+com.xray.transport.internet.finalmask.noiseP\x01Z<github.com/xtls/xray-core/transport/internet/finalmask/noise\xaa\x02\'Xray.Transport.Internet.Finalmask.Noiseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/transport/internet/finalmask/noise/config.proto\x12\'xray.transport.internet.finalmask.noise\"\x90\x01\n\x04Item\x12\x10\n\x08rand_min\x18\x01 \x01(\x03\x12\x10\n\x08rand_max\x18\x02 \x01(\x03\x12\x16\n\x0erand_range_min\x18\x03 \x01(\x05\x12\x16\n\x0erand_range_max\x18\x04 \x01(\x05\x12\x0e\n\x06packet\x18\x05 \x01(\x0c\x12\x11\n\tdelay_min\x18\x06 \x01(\x03\x12\x11\n\tdelay_max\x18\x07 \x01(\x03\"l\n\x06\x43onfig\x12\x11\n\treset_min\x18\x01 \x01(\x03\x12\x11\n\treset_max\x18\x02 \x01(\x03\x12<\n\x05items\x18\x03 \x03(\x0b\x32-.xray.transport.internet.finalmask.noise.ItemB\x97\x01\n+com.xray.transport.internet.finalmask.noiseP\x01Z<github.com/xtls/xray-core/transport/internet/finalmask/noise\xaa\x02\'Xray.Transport.Internet.Finalmask.Noiseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,12 +32,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.finalmas
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n+com.xray.transport.internet.finalmask.noiseP\001Z<github.com/xtls/xray-core/transport/internet/finalmask/noise\252\002\'Xray.Transport.Internet.Finalmask.Noise'
-  _globals['_SEGMENT']._serialized_start=93
-  _globals['_SEGMENT']._serialized_end=328
-  _globals['_SEGMENT_KIND']._serialized_start=224
-  _globals['_SEGMENT_KIND']._serialized_end=328
-  _globals['_ITEM']._serialized_start=331
-  _globals['_ITEM']._serialized_end=543
-  _globals['_CONFIG']._serialized_start=545
-  _globals['_CONFIG']._serialized_end=653
+  _globals['_ITEM']._serialized_start=93
+  _globals['_ITEM']._serialized_end=237
+  _globals['_CONFIG']._serialized_start=239
+  _globals['_CONFIG']._serialized_end=347
 # @@protoc_insertion_point(module_scope)
