@@ -1,4 +1,4 @@
-name: Update Xray API
+name: Update bindings
 
 on:
   schedule:
@@ -21,37 +21,26 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Fetch versions
-        id: versions
-        run: bash scripts/fetch_versions.sh "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
-
       - name: Setup Python
-        if: steps.versions.outputs.needs_update == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install dependencies
-        if: steps.versions.outputs.needs_update == 'true'
-        run: pip install grpcio-tools build
+        run: pip install grpcio-tools build more-itertools
+
+      - name: Fetch versions
+        id: versions
+        run: cd scripts && python -m fetch_versions "XTLS/Xray-core" "$GITHUB_STEP_SUMMARY" "$GITHUB_OUTPUT"
 
       - name: Clone Xray-core source
         if: steps.versions.outputs.needs_update == 'true'
         uses: actions/checkout@v4
         with:
           repository: XTLS/Xray-core
-          ref: v${{ steps.versions.outputs.latest_xray_version }}
+          ref: v${{ steps.versions.outputs.latest_upstream_version }}
           path: xray-src
           fetch-depth: 1
-
-      - name: Check if Xray-core version is a prerelease
-        if: steps.versions.outputs.needs_update == 'true'
-        id: check_prerelease
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          IS_PRERELEASE=$(gh api repos/XTLS/Xray-core/releases/tags/v${{ steps.versions.outputs.latest_xray_version }} --jq '.prerelease')
-          echo "is_prerelease=$IS_PRERELEASE" >> $GITHUB_OUTPUT
 
       - name: Compile protobuf files
         if: steps.versions.outputs.needs_update == 'true'
@@ -69,7 +58,7 @@ jobs:
         if: steps.versions.outputs.needs_update == 'true'
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: Update Python bindings to match Xray-core v${{ steps.versions.outputs.latest_xray_version }}
+          commit_message: Update Python bindings to match Xray-core v${{ steps.versions.outputs.latest_upstream_version }}
           file_pattern: 'xray/ pyproject.toml'
           tag_name: v${{ steps.versions.outputs.new_version }}
           tagging_message: v${{ steps.versions.outputs.new_version }}
@@ -80,12 +69,12 @@ jobs:
         with:
           tag_name: v${{ steps.versions.outputs.new_version }}
           name: v${{ steps.versions.outputs.new_version }}
-          prerelease: ${{ steps.check_prerelease.outputs.is_prerelease }}
+          prerelease: ${{ steps.versions.outputs.is_prerelease }}
           files: |
             dist/*.whl
             dist/*.tar.gz
           body: |
-            Updated Python bindings to match **Xray-core v${{ steps.versions.outputs.latest_xray_version }}**
+            Updated Python bindings to match **Xray-core v${{ steps.versions.outputs.latest_upstream_version }}**
 
             ## Installation:
 
@@ -113,5 +102,12 @@ jobs:
           skip-existing: true
 
       - name: Final Summary
-        if: steps.versions.outputs.needs_update == 'true'
-        run: echo "## ✅ Update completed successfully" >> $GITHUB_STEP_SUMMARY
+        if: always()
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "## ✅ Update completed successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "## ❌ Update failed" >> $GITHUB_STEP_SUMMARY
+          fi
