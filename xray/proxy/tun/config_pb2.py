@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16proxy/tun/config.proto\x12\x0exray.proxy.tun\"\x9a\x01\n\x06\x43onfig\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03MTU\x18\x02 \x01(\r\x12\x0f\n\x07gateway\x18\x03 \x03(\t\x12\x0b\n\x03\x44NS\x18\x04 \x03(\t\x12\x12\n\nuser_level\x18\x05 \x01(\r\x12!\n\x19\x61uto_system_routing_table\x18\x06 \x03(\t\x12 \n\x18\x61uto_outbounds_interface\x18\x07 \x01(\tBL\n\x12\x63om.xray.proxy.tunP\x01Z#github.com/xtls/xray-core/proxy/tun\xaa\x02\x0eXray.Proxy.Tunb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16proxy/tun/config.proto\x12\x0exray.proxy.tun\"\x9a\x01\n\x06\x43onfig\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03MTU\x18\x02 \x03(\r\x12\x0f\n\x07gateway\x18\x03 \x03(\t\x12\x0b\n\x03\x44NS\x18\x04 \x03(\t\x12\x12\n\nuser_level\x18\x05 \x01(\r\x12!\n\x19\x61uto_system_routing_table\x18\x06 \x03(\t\x12 \n\x18\x61uto_outbounds_interface\x18\x07 \x01(\tBL\n\x12\x63om.xray.proxy.tunP\x01Z#github.com/xtls/xray-core/proxy/tun\xaa\x02\x0eXray.Proxy.Tunb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

@@ -24,10 +24,9 @@ _sym_db = _symbol_database.Default()
 
 from xray.common.protocol import server_spec_pb2 as common_dot_protocol_dot_server__spec__pb2
 from xray.transport.internet import config_pb2 as transport_dot_internet_dot_config__pb2
-from xray.common.geodata import geodat_pb2 as common_dot_geodata_dot_geodat__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproxy/freedom/config.proto\x12\x12xray.proxy.freedom\x1a!common/protocol/server_spec.proto\x1a\x1ftransport/internet/config.proto\x1a\x1b\x63ommon/geodata/geodat.proto\"K\n\x13\x44\x65stinationOverride\x12\x34\n\x06server\x18\x01 \x01(\x0b\x32$.xray.common.protocol.ServerEndpoint\"\xb6\x01\n\x08\x46ragment\x12\x14\n\x0cpackets_from\x18\x01 \x01(\x04\x12\x12\n\npackets_to\x18\x02 \x01(\x04\x12\x12\n\nlength_min\x18\x03 \x01(\x04\x12\x12\n\nlength_max\x18\x04 \x01(\x04\x12\x14\n\x0cinterval_min\x18\x05 \x01(\x04\x12\x14\n\x0cinterval_max\x18\x06 \x01(\x04\x12\x15\n\rmax_split_min\x18\x07 \x01(\x04\x12\x15\n\rmax_split_max\x18\x08 \x01(\x04\"w\n\x05Noise\x12\x12\n\nlength_min\x18\x01 \x01(\x04\x12\x12\n\nlength_max\x18\x02 \x01(\x04\x12\x11\n\tdelay_min\x18\x03 \x01(\x04\x12\x11\n\tdelay_max\x18\x04 \x01(\x04\x12\x0e\n\x06packet\x18\x05 \x01(\x0c\x12\x10\n\x08\x61pply_to\x18\x06 \x01(\t\"5\n\x07IPRules\x12*\n\x05rules\x18\x01 \x03(\x0b\x32\x1b.xray.common.geodata.IPRule\"\xdf\x02\n\x06\x43onfig\x12@\n\x0f\x64omain_strategy\x18\x01 \x01(\x0e\x32\'.xray.transport.internet.DomainStrategy\x12\x45\n\x14\x64\x65stination_override\x18\x03 \x01(\x0b\x32\'.xray.proxy.freedom.DestinationOverride\x12\x12\n\nuser_level\x18\x04 \x01(\r\x12.\n\x08\x66ragment\x18\x05 \x01(\x0b\x32\x1c.xray.proxy.freedom.Fragment\x12\x16\n\x0eproxy_protocol\x18\x06 \x01(\r\x12)\n\x06noises\x18\x07 \x03(\x0b\x32\x19.xray.proxy.freedom.Noise\x12\x35\n\x0bips_blocked\x18\x08 \x01(\x0b\x32\x1b.xray.proxy.freedom.IPRulesH\x00\x88\x01\x01\x42\x0e\n\x0c_ips_blockedBX\n\x16\x63om.xray.proxy.freedomP\x01Z\'github.com/xtls/xray-core/proxy/freedom\xaa\x02\x12Xray.Proxy.Freedomb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproxy/freedom/config.proto\x12\x12xray.proxy.freedom\x1a!common/protocol/server_spec.proto\x1a\x1ftransport/internet/config.proto\"K\n\x13\x44\x65stinationOverride\x12\x34\n\x06server\x18\x01 \x01(\x0b\x32$.xray.common.protocol.ServerEndpoint\"\xb6\x01\n\x08\x46ragment\x12\x14\n\x0cpackets_from\x18\x01 \x01(\x04\x12\x12\n\npackets_to\x18\x02 \x01(\x04\x12\x12\n\nlength_min\x18\x03 \x01(\x04\x12\x12\n\nlength_max\x18\x04 \x01(\x04\x12\x14\n\x0cinterval_min\x18\x05 \x01(\x04\x12\x14\n\x0cinterval_max\x18\x06 \x01(\x04\x12\x15\n\rmax_split_min\x18\x07 \x01(\x04\x12\x15\n\rmax_split_max\x18\x08 \x01(\x04\"w\n\x05Noise\x12\x12\n\nlength_min\x18\x01 \x01(\x04\x12\x12\n\nlength_max\x18\x02 \x01(\x04\x12\x11\n\tdelay_min\x18\x03 \x01(\x04\x12\x11\n\tdelay_max\x18\x04 \x01(\x04\x12\x0e\n\x06packet\x18\x05 \x01(\x0c\x12\x10\n\x08\x61pply_to\x18\x06 \x01(\t\"\x98\x02\n\x06\x43onfig\x12@\n\x0f\x64omain_strategy\x18\x01 \x01(\x0e\x32\'.xray.transport.internet.DomainStrategy\x12\x45\n\x14\x64\x65stination_override\x18\x03 \x01(\x0b\x32\'.xray.proxy.freedom.DestinationOverride\x12\x12\n\nuser_level\x18\x04 \x01(\r\x12.\n\x08\x66ragment\x18\x05 \x01(\x0b\x32\x1c.xray.proxy.freedom.Fragment\x12\x16\n\x0eproxy_protocol\x18\x06 \x01(\r\x12)\n\x06noises\x18\x07 \x03(\x0b\x32\x19.xray.proxy.freedom.NoiseBX\n\x16\x63om.xray.proxy.freedomP\x01Z\'github.com/xtls/xray-core/proxy/freedom\xaa\x02\x12Xray.Proxy.Freedomb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,14 +34,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proxy.freedom.config_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\026com.xray.proxy.freedomP\001Z\'github.com/xtls/xray-core/proxy/freedom\252\002\022Xray.Proxy.Freedom'
-  _globals['_DESTINATIONOVERRIDE']._serialized_start=147
-  _globals['_DESTINATIONOVERRIDE']._serialized_end=222
-  _globals['_FRAGMENT']._serialized_start=225
-  _globals['_FRAGMENT']._serialized_end=407
-  _globals['_NOISE']._serialized_start=409
-  _globals['_NOISE']._serialized_end=528
-  _globals['_IPRULES']._serialized_start=530
-  _globals['_IPRULES']._serialized_end=583
-  _globals['_CONFIG']._serialized_start=586
-  _globals['_CONFIG']._serialized_end=937
+  _globals['_DESTINATIONOVERRIDE']._serialized_start=118
+  _globals['_DESTINATIONOVERRIDE']._serialized_end=193
+  _globals['_FRAGMENT']._serialized_start=196
+  _globals['_FRAGMENT']._serialized_end=378
+  _globals['_NOISE']._serialized_start=380
+  _globals['_NOISE']._serialized_end=499
+  _globals['_CONFIG']._serialized_start=502
+  _globals['_CONFIG']._serialized_end=782
 # @@protoc_insertion_point(module_scope)
