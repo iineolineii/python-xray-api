@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$transport/internet/xtls/config.proto\x12\x1cxray.transport.internet.xtls\"\xf8\x01\n\x0b\x43\x65rtificate\x12\x13\n\x0b\x63\x65rtificate\x18\x01 \x01(\x0c\x12\x0b\n\x03key\x18\x02 \x01(\x0c\x12>\n\x05usage\x18\x03 \x01(\x0e\x32/.xray.transport.internet.xtls.Certificate.Usage\x12\x15\n\rocsp_stapling\x18\x04 \x01(\x03\x12\x18\n\x10\x63\x65rtificate_path\x18\x05 \x01(\t\x12\x10\n\x08key_path\x18\x06 \x01(\t\"D\n\x05Usage\x12\x10\n\x0c\x45NCIPHERMENT\x10\x00\x12\x14\n\x10\x41UTHORITY_VERIFY\x10\x01\x12\x13\n\x0f\x41UTHORITY_ISSUE\x10\x02\"\xb2\x02\n\x06\x43onfig\x12\x16\n\x0e\x61llow_insecure\x18\x01 \x01(\x08\x12>\n\x0b\x63\x65rtificate\x18\x02 \x03(\x0b\x32).xray.transport.internet.xtls.Certificate\x12\x13\n\x0bserver_name\x18\x03 \x01(\t\x12\x15\n\rnext_protocol\x18\x04 \x03(\t\x12!\n\x19\x65nable_session_resumption\x18\x05 \x01(\x08\x12\x1b\n\x13\x64isable_system_root\x18\x06 \x01(\x08\x12\x13\n\x0bmin_version\x18\x07 \x01(\t\x12\x13\n\x0bmax_version\x18\x08 \x01(\t\x12\x15\n\rcipher_suites\x18\t \x01(\t\x12#\n\x1bprefer_server_cipher_suites\x18\n \x01(\x08\x42v\n com.xray.transport.internet.xtlsP\x01Z1github.com/xtls/xray-core/transport/internet/xtls\xaa\x02\x1cXray.Transport.Internet.Xtlsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$transport/internet/xtls/config.proto\x12\x1cxray.transport.internet.xtls\"\xcc\x01\n\x0b\x43\x65rtificate\x12\x13\n\x0b\x63\x65rtificate\x18\x01 \x01(\x0c\x12\x0b\n\x03key\x18\x02 \x01(\x0c\x12>\n\x05usage\x18\x03 \x01(\x0e\x32/.xray.transport.internet.xtls.Certificate.Usage\x12\x15\n\rocsp_stapling\x18\x04 \x01(\x03\"D\n\x05Usage\x12\x10\n\x0c\x45NCIPHERMENT\x10\x00\x12\x14\n\x10\x41UTHORITY_VERIFY\x10\x01\x12\x13\n\x0f\x41UTHORITY_ISSUE\x10\x02\"\xb2\x02\n\x06\x43onfig\x12\x16\n\x0e\x61llow_insecure\x18\x01 \x01(\x08\x12>\n\x0b\x63\x65rtificate\x18\x02 \x03(\x0b\x32).xray.transport.internet.xtls.Certificate\x12\x13\n\x0bserver_name\x18\x03 \x01(\t\x12\x15\n\rnext_protocol\x18\x04 \x03(\t\x12!\n\x19\x65nable_session_resumption\x18\x05 \x01(\x08\x12\x1b\n\x13\x64isable_system_root\x18\x06 \x01(\x08\x12\x13\n\x0bmin_version\x18\x07 \x01(\t\x12\x13\n\x0bmax_version\x18\x08 \x01(\t\x12\x15\n\rcipher_suites\x18\t \x01(\t\x12#\n\x1bprefer_server_cipher_suites\x18\n \x01(\x08\x42v\n com.xray.transport.internet.xtlsP\x01Z1github.com/xtls/xray-core/transport/internet/xtls\xaa\x02\x1cXray.Transport.Internet.Xtlsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,9 +33,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n com.xray.transport.internet.xtlsP\001Z1github.com/xtls/xray-core/transport/internet/xtls\252\002\034Xray.Transport.Internet.Xtls'
   _globals['_CERTIFICATE']._serialized_start=71
-  _globals['_CERTIFICATE']._serialized_end=319
-  _globals['_CERTIFICATE_USAGE']._serialized_start=251
-  _globals['_CERTIFICATE_USAGE']._serialized_end=319
-  _globals['_CONFIG']._serialized_start=322
-  _globals['_CONFIG']._serialized_end=628
+  _globals['_CERTIFICATE']._serialized_end=275
+  _globals['_CERTIFICATE_USAGE']._serialized_start=207
+  _globals['_CERTIFICATE_USAGE']._serialized_end=275
+  _globals['_CONFIG']._serialized_start=278
+  _globals['_CONFIG']._serialized_end=584
 # @@protoc_insertion_point(module_scope)
