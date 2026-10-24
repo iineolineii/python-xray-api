@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/transport/internet/finalmask/noise/config.proto\x12\'xray.transport.internet.finalmask.noise\"\x90\x01\n\x04Item\x12\x10\n\x08rand_min\x18\x01 \x01(\x03\x12\x10\n\x08rand_max\x18\x02 \x01(\x03\x12\x16\n\x0erand_range_min\x18\x03 \x01(\x05\x12\x16\n\x0erand_range_max\x18\x04 \x01(\x05\x12\x0e\n\x06packet\x18\x05 \x01(\x0c\x12\x11\n\tdelay_min\x18\x06 \x01(\x03\x12\x11\n\tdelay_max\x18\x07 \x01(\x03\"l\n\x06\x43onfig\x12\x11\n\treset_min\x18\x01 \x01(\x03\x12\x11\n\treset_max\x18\x02 \x01(\x03\x12<\n\x05items\x18\x03 \x03(\x0b\x32-.xray.transport.internet.finalmask.noise.ItemB\x97\x01\n+com.xray.transport.internet.finalmask.noiseP\x01Z<github.com/xtls/xray-core/transport/internet/finalmask/noise\xaa\x02\'Xray.Transport.Internet.Finalmask.Noiseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/transport/internet/finalmask/noise/config.proto\x12\'xray.transport.internet.finalmask.noise\"`\n\x04Item\x12\x10\n\x08rand_min\x18\x01 \x01(\x03\x12\x10\n\x08rand_max\x18\x02 \x01(\x03\x12\x0e\n\x06packet\x18\x03 \x01(\x0c\x12\x11\n\tdelay_min\x18\x04 \x01(\x03\x12\x11\n\tdelay_max\x18\x05 \x01(\x03\"l\n\x06\x43onfig\x12\x11\n\treset_min\x18\x01 \x01(\x03\x12\x11\n\treset_max\x18\x02 \x01(\x03\x12<\n\x05items\x18\x03 \x03(\x0b\x32-.xray.transport.internet.finalmask.noise.ItemB\x97\x01\n+com.xray.transport.internet.finalmask.noiseP\x01Z<github.com/xtls/xray-core/transport/internet/finalmask/noise\xaa\x02\'Xray.Transport.Internet.Finalmask.Noiseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +32,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.finalmas
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n+com.xray.transport.internet.finalmask.noiseP\001Z<github.com/xtls/xray-core/transport/internet/finalmask/noise\252\002\'Xray.Transport.Internet.Finalmask.Noise'
-  _globals['_ITEM']._serialized_start=93
-  _globals['_ITEM']._serialized_end=237
-  _globals['_CONFIG']._serialized_start=239
-  _globals['_CONFIG']._serialized_end=347
+  _globals['_ITEM']._serialized_start=92
+  _globals['_ITEM']._serialized_end=188
+  _globals['_CONFIG']._serialized_start=190
+  _globals['_CONFIG']._serialized_end=298
 # @@protoc_insertion_point(module_scope)
