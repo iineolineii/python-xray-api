@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19proxy/vless/account.proto\x12\x10xray.proxy.vless\"\x16\n\x07Reverse\x12\x0b\n\x03tag\x18\x01 \x01(\t\"\xb9\x01\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04\x66low\x18\x02 \x01(\t\x12\x12\n\nencryption\x18\x03 \x01(\t\x12\x0f\n\x07xorMode\x18\x04 \x01(\r\x12\x0f\n\x07seconds\x18\x05 \x01(\r\x12\x0f\n\x07padding\x18\x06 \x01(\t\x12*\n\x07reverse\x18\x07 \x01(\x0b\x32\x19.xray.proxy.vless.Reverse\x12\x0f\n\x07testpre\x18\x08 \x01(\r\x12\x10\n\x08testseed\x18\t \x03(\rBR\n\x14\x63om.xray.proxy.vlessP\x01Z%github.com/xtls/xray-core/proxy/vless\xaa\x02\x10Xray.Proxy.Vlessb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19proxy/vless/account.proto\x12\x10xray.proxy.vless\"\x16\n\x07Reverse\x12\x0b\n\x03tag\x18\x01 \x01(\t\"\x96\x01\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04\x66low\x18\x02 \x01(\t\x12\x12\n\nencryption\x18\x03 \x01(\t\x12\x0f\n\x07xorMode\x18\x04 \x01(\r\x12\x0f\n\x07seconds\x18\x05 \x01(\r\x12\x0f\n\x07padding\x18\x06 \x01(\t\x12*\n\x07reverse\x18\x07 \x01(\x0b\x32\x19.xray.proxy.vless.ReverseBR\n\x14\x63om.xray.proxy.vlessP\x01Z%github.com/xtls/xray-core/proxy/vless\xaa\x02\x10Xray.Proxy.Vlessb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,5 +35,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_REVERSE']._serialized_start=47
   _globals['_REVERSE']._serialized_end=69
   _globals['_ACCOUNT']._serialized_start=72
-  _globals['_ACCOUNT']._serialized_end=257
+  _globals['_ACCOUNT']._serialized_end=222
 # @@protoc_insertion_point(module_scope)
