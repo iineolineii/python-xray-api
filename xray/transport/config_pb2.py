@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from xray.transport.internet import config_pb2 as transport_dot_internet_dot_config__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16transport/config.proto\x12\x0exray.transport\x1a\x1ftransport/internet/config.proto\"R\n\x06\x43onfig\x12\x44\n\x12transport_settings\x18\x01 \x03(\x0b\x32(.xray.transport.internet.TransportConfig:\x02\x18\x01\x42L\n\x12\x63om.xray.transportP\x01Z#github.com/xtls/xray-core/transport\xaa\x02\x0eXray.Transportb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16transport/config.proto\x12\x0exray.transport\x1a\x1ftransport/internet/config.proto\"R\n\x06\x43onfig\x12\x44\n\x12transport_settings\x18\x01 \x03(\x0b\x32(.xray.transport.internet.TransportConfig:\x02\x18\x01\x42O\n\x12\x63om.xray.transportP\x01Z&github.com/xtls/xray-core/v1/transport\xaa\x02\x0eXray.Transportb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.config_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\022com.xray.transportP\001Z#github.com/xtls/xray-core/transport\252\002\016Xray.Transport'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\022com.xray.transportP\001Z&github.com/xtls/xray-core/v1/transport\252\002\016Xray.Transport'
   _globals['_CONFIG']._loaded_options = None
   _globals['_CONFIG']._serialized_options = b'\030\001'
   _globals['_CONFIG']._serialized_start=75

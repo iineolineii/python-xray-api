@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from xray.common.net import destination_pb2 as common_dot_net_dot_destination__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16proxy/dns/config.proto\x12\x0exray.proxy.dns\x1a\x1c\x63ommon/net/destination.proto\"3\n\x06\x43onfig\x12)\n\x06server\x18\x01 \x01(\x0b\x32\x19.xray.common.net.EndpointBL\n\x12\x63om.xray.proxy.dnsP\x01Z#github.com/xtls/xray-core/proxy/dns\xaa\x02\x0eXray.Proxy.Dnsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16proxy/dns/config.proto\x12\x0exray.proxy.dns\x1a\x1c\x63ommon/net/destination.proto\"3\n\x06\x43onfig\x12)\n\x06server\x18\x01 \x01(\x0b\x32\x19.xray.common.net.EndpointBO\n\x12\x63om.xray.proxy.dnsP\x01Z&github.com/xtls/xray-core/v1/proxy/dns\xaa\x02\x0eXray.Proxy.Dnsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proxy.dns.config_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\022com.xray.proxy.dnsP\001Z#github.com/xtls/xray-core/proxy/dns\252\002\016Xray.Proxy.Dns'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\022com.xray.proxy.dnsP\001Z&github.com/xtls/xray-core/v1/proxy/dns\252\002\016Xray.Proxy.Dns'
   _globals['_CONFIG']._serialized_start=72
   _globals['_CONFIG']._serialized_end=123
 # @@protoc_insertion_point(module_scope)

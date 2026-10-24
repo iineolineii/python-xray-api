@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,transport/internet/headers/noop/config.proto\x12$xray.transport.internet.headers.noop\"\x08\n\x06\x43onfig\"\x12\n\x10\x43onnectionConfigB\x8e\x01\n(com.xray.transport.internet.headers.noopP\x01Z9github.com/xtls/xray-core/transport/internet/headers/noop\xaa\x02$Xray.Transport.Internet.Headers.Noopb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,transport/internet/headers/noop/config.proto\x12$xray.transport.internet.headers.noop\"\x08\n\x06\x43onfig\"\x12\n\x10\x43onnectionConfigB\x91\x01\n(com.xray.transport.internet.headers.noopP\x01Z<github.com/xtls/xray-core/v1/transport/internet/headers/noop\xaa\x02$Xray.Transport.Internet.Headers.Noopb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.headers.noop.config_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n(com.xray.transport.internet.headers.noopP\001Z9github.com/xtls/xray-core/transport/internet/headers/noop\252\002$Xray.Transport.Internet.Headers.Noop'
+  _globals['DESCRIPTOR']._serialized_options = b'\n(com.xray.transport.internet.headers.noopP\001Z<github.com/xtls/xray-core/v1/transport/internet/headers/noop\252\002$Xray.Transport.Internet.Headers.Noop'
   _globals['_CONFIG']._serialized_start=86
   _globals['_CONFIG']._serialized_end=94
   _globals['_CONNECTIONCONFIG']._serialized_start=96

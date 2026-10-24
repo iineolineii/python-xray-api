@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1transport/internet/headers/wireguard/config.proto\x12)xray.transport.internet.headers.wireguard\"\x11\n\x0fWireguardConfigB\x9d\x01\n-com.xray.transport.internet.headers.wireguardP\x01Z>github.com/xtls/xray-core/transport/internet/headers/wireguard\xaa\x02)Xray.Transport.Internet.Headers.Wireguardb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1transport/internet/headers/wireguard/config.proto\x12)xray.transport.internet.headers.wireguard\"\x11\n\x0fWireguardConfigB\xa0\x01\n-com.xray.transport.internet.headers.wireguardP\x01ZAgithub.com/xtls/xray-core/v1/transport/internet/headers/wireguard\xaa\x02)Xray.Transport.Internet.Headers.Wireguardb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'transport.internet.headers.wireguard.config_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n-com.xray.transport.internet.headers.wireguardP\001Z>github.com/xtls/xray-core/transport/internet/headers/wireguard\252\002)Xray.Transport.Internet.Headers.Wireguard'
+  _globals['DESCRIPTOR']._serialized_options = b'\n-com.xray.transport.internet.headers.wireguardP\001ZAgithub.com/xtls/xray-core/v1/transport/internet/headers/wireguard\252\002)Xray.Transport.Internet.Headers.Wireguard'
   _globals['_WIREGUARDCONFIG']._serialized_start=96
   _globals['_WIREGUARDCONFIG']._serialized_end=113
 # @@protoc_insertion_point(module_scope)
