@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from xray.common.serial import typed_message_pb2 as common_dot_serial_dot_typed__message__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cproxy/blackhole/config.proto\x12\x14xray.proxy.blackhole\"6\n\x08Response\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x1c\n\x14\x63ustom_response_data\x18\x02 \x01(\x0c\":\n\x06\x43onfig\x12\x30\n\x08response\x18\x01 \x01(\x0b\x32\x1e.xray.proxy.blackhole.ResponseB^\n\x18\x63om.xray.proxy.blackholeP\x01Z)github.com/xtls/xray-core/proxy/blackhole\xaa\x02\x14Xray.Proxy.Blackholeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cproxy/blackhole/config.proto\x12\x14xray.proxy.blackhole\x1a!common/serial/typed_message.proto\"\x0e\n\x0cNoneResponse\"\x0e\n\x0cHTTPResponse\"<\n\x06\x43onfig\x12\x32\n\x08response\x18\x01 \x01(\x0b\x32 .xray.common.serial.TypedMessageB^\n\x18\x63om.xray.proxy.blackholeP\x01Z)github.com/xtls/xray-core/proxy/blackhole\xaa\x02\x14Xray.Proxy.Blackholeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +33,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proxy.blackhole.config_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\030com.xray.proxy.blackholeP\001Z)github.com/xtls/xray-core/proxy/blackhole\252\002\024Xray.Proxy.Blackhole'
-  _globals['_RESPONSE']._serialized_start=54
-  _globals['_RESPONSE']._serialized_end=108
-  _globals['_CONFIG']._serialized_start=110
-  _globals['_CONFIG']._serialized_end=168
+  _globals['_NONERESPONSE']._serialized_start=89
+  _globals['_NONERESPONSE']._serialized_end=103
+  _globals['_HTTPRESPONSE']._serialized_start=105
+  _globals['_HTTPRESPONSE']._serialized_end=119
+  _globals['_CONFIG']._serialized_start=121
+  _globals['_CONFIG']._serialized_end=181
 # @@protoc_insertion_point(module_scope)
